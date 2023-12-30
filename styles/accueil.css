@@ -17,9 +17,10 @@ nav {
     width: 100%;
 }
 
-#separateur-nav {
-    background-color: #D1E8E2;
-    width: 0.7%
+#labisen-nav{
+    display: inline-block;
+    width: 15%;
+    height: 15%;
 }
 
 #navbar{
@@ -28,10 +29,7 @@ nav {
     justify-content: space-around;
     flex-direction: row;
     align-items: center;
-    width: 80%;
 }
-
-
 
 #navbar li{
     border: solid white 1px;
@@ -46,7 +44,7 @@ nav {
 }
 
 #navbar li a img{
-    margin: 0px 2px -7px 2px; /*ordre : top right bottom left*/
+    margin: 0px 3px -7px 1px; /*ordre : top right bottom left*/
 }
 
 .triangle-nav {
