@@ -1,0 +1,16 @@
+#title{
+    color: #FFF;
+    font-family: Lekton;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#box{
+    border-radius: 1em;
+    background: #116466;
+    width: 9em;
+    height: 1em;
+    flex-shrink: 0;
+}
