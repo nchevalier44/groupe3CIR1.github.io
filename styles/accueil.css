@@ -1,13 +1,14 @@
 @font-face {
-    font-family: 'Lekton';
-    src: url('../font/Lekton-Regular.ttf') format('ttf');
-    font-weight: normal;
+    font-family: "Lekton Regular";
     font-style: normal;
-}
+    font-weight: normal;
+    src: url('../font/Lekton-Regular.woff') format('woff');
+    }
 
 body{
     margin: 0;
     padding: 0;
+    font-family: "Lekton Regular";
 }
 nav {
     background-color: #116466;
@@ -35,18 +36,19 @@ nav {
 #navbar li{
     border: solid white 1px;
     border-radius: 30px;
-    font-family: 'Lekton', sans-serif;
     padding: 5px 25px 5px 25px; /*ordre : top right bottom left*/
     
 }
 
-#navbar li a p{
-    color: white;
-    display: inline-block;
-}
-
 #navbar li a{
-    color: inherit;
+    color: white;
     text-decoration: none;
 }
 
+#navbar li a img{
+    margin-bottom: 10px;
+}
+
+.triangle-nav {
+    transform: rotate(180deg);
+}
