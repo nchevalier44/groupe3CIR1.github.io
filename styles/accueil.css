@@ -15,6 +15,14 @@ nav {
     margin: 0;
     padding: 1px;
     width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#labisen-nav{
+    width: 15%;
+    height: 15%;
 }
 
 #navbar{
