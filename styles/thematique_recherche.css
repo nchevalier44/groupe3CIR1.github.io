@@ -1,16 +1,66 @@
+@font-face {
+    font-family: "Lekton Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/Lekton-Regular.woff') format('woff');
+    }
+
+body{
+    background-color: #D1E8E2;
+}
+
 #title{
-    color: #FFF;
-    font-family: Lekton;
-    font-size: 1em;
+    
+    font-family: "Lekton Regular";
+    font-size: 2rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    text-align: center;
+    padding-top: 1rem;
 }
 
-#box{
-    border-radius: 1em;
-    background: #116466;
-    width: 9em;
-    height: 1em;
+
+.box{
+    color: #FFF;
+    margin-left : auto;
+    margin-right: auto;
+
+    width: 26.5rem;
+    height: 5rem;
+    padding: auto;
     flex-shrink: 0;
+    border-radius: 2rem;
+    background: #116466;
+    
+}
+
+@keyframes dissolve {
+    from {
+        background-color: #116466;
+    }
+    to{
+        background-color: #D1E8E2;
+    }
+}
+
+.box:hover{
+    color : #116466; 
+    animation : dissolve 0.5s ease forwards;
+    
+}
+
+.axe{
+    font-weight :bold;
+}
+
+.txt{
+    text-align: justify;
+    font-family: "Lekton Regular";
+    font-size : 2rem;
+
+}
+
+.axe{
+    font-weight: bold;
 }
