@@ -15,6 +15,7 @@ body{
     background-color: #D1E8E2;
     max-width: 100%;
     overflow-x: hidden;
+    z-index: -2;
 }
 
 
@@ -130,6 +131,7 @@ nav {
 #recherche-nav input[type="checkbox"]:checked+ul {
     display: block;
 }
+
 
 #recherche-nav ul li {
     display: block;
