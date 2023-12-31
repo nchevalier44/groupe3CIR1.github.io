@@ -12,34 +12,39 @@
       
 body{
     font-family: "Lekton Regular";
+    background-color: #D1E8E2;
 }
 nav {
     background-color: #116466;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 2rem;
+    display: inline flex;
+    padding: 1%;
+    width: 100%;
 }
 
 #labisen-nav{
-    width: 15%;
-    height: 15%;
+    margin-left: 2%;
+    width: 12%;
+    height: 12%;
 }
 
 #navbar{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     list-style-type: none;
+    width: 100%;
+    border-left: solid #D1E8E2 0.1vw;
+    margin-left: 2%;
 }
 
 #navbar li {
-    border: solid white 0.1rem;
-    border-radius: 1rem;
-    margin-left: 1rem;
-    padding: 0.5rem 1rem 0.5rem 1rem; /*ordre : top right bottom left*/
+    border: solid white 0.1vw;
+    border-radius: 2vw;
+    padding: 0.5% 1% 0.5% 1%; /*ordre : top right bottom left*/
     white-space: nowrap;
     color: white;
     transition: 0.5s;
+    font-size: 1vw;
 }
 
 #navbar li a{
@@ -54,9 +59,10 @@ nav {
 }
 
 #navbar li a img{
-    margin: 0px 3px -7px 1px; /*ordre : top right bottom left*/
+    margin: 0vw 0.3vw -0.5vw 0.1vw; /*ordre : top right bottom left*/
+    width: 1.5vw;
 }
 
 .triangle-nav {
-    transform: rotate(180deg) scale(0.7);
+    transform: rotate(180deg) scale(0.8);
 }
