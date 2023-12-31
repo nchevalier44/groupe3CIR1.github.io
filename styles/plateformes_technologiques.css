@@ -1,0 +1,62 @@
+
+
+@font-face {
+    font-family: "Lekton Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/Lekton-Regular.woff') format('woff');
+    }
+
+body{
+    font-family: "Lekton Regular";
+    background-color:  #D1E8E2;
+}
+
+.titre{
+    color:#116466;
+    text-align: left;
+    font-size: 250%;
+    margin-left: 2%;
+
+}
+
+.intro{
+    font-size: 1,5vw;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: justify;
+}
+
+hr{
+    height: 0.1vw;
+    background-color: black;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.sous-titre{
+    color: #116466;
+
+
+}
+
+.living-lab{
+    margin-left: 50%;
+    margin-right: 5%;
+    text-align: justify;
+
+}
+
+.texte-living_lab{
+    
+    text-align: justify;
+    font-size: 1,5vw;
+
+}
+
+img{
+    height: 50%;
+    width: 100%;
+    display: flex;
+
+}
