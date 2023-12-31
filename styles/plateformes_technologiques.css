@@ -1,15 +1,20 @@
-
-
 @font-face {
     font-family: "Lekton Regular";
     font-style: normal;
     font-weight: normal;
     src: url('../font/Lekton-Regular.woff') format('woff');
-    }
+}
 
+* {
+    padding: 0;
+    margin: 0;
+}
+      
 body{
     font-family: "Lekton Regular";
-    background-color:  #D1E8E2;
+    background-color: #D1E8E2;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .titre{
@@ -58,26 +63,7 @@ img{
     height: 50%;
     width: 100%;
     display: flex;
-
-@font-face {
-    font-family: "Lekton Regular";
-    font-style: normal;
-    font-weight: normal;
-    src: url('../font/Lekton-Regular.woff') format('woff');
-    }
-
-* {
-    padding: 0;
-    margin: 0;
 }
-      
-body{
-    font-family: "Lekton Regular";
-    background-color: #D1E8E2;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
 
 /*
 ===================================================================
