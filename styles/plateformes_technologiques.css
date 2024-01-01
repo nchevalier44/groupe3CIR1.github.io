@@ -40,11 +40,10 @@ hr{
 
 }
 
-.living-lab{
+#living-lab{
     margin-left: 50%;
     margin-right: 5%;
     text-align: justify;
-
 }
 
 .texte-living_lab{
@@ -57,6 +56,10 @@ hr{
 img{
     height: 50%;
     width: 100%;
-    display: flex;
+    max-width: 100%;
+    align-self: auto;
+    align-items: center;
+    
+   
 
 }
