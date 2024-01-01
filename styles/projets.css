@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: "Lekton Regular";
     font-style: normal;
@@ -6,10 +5,205 @@
     src: url('../font/Lekton-Regular.woff') format('woff');
     }
 
+* {
+    padding: 0;
+    margin: 0;
+}
+      
 body{
     font-family: "Lekton Regular";
-    background-color:  #D1E8E2;
+    background-color: #D1E8E2;
+    max-width: 100%;
+    overflow-x: hidden;
+
 }
+
+/*
+===================================================================
+======================DEBUT BARRE DE NAVIGATION====================
+===================================================================
+*/
+
+nav {
+    background-color: #116466;
+    display: inline flex;
+    padding: 1%;
+    width: 100%;
+}
+
+#labisen-nav{
+    width: 12%;
+    height: 12%;
+}
+
+#navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    width: 99%;
+    border-left: solid #D1E8E2 0.1vw;
+    margin-left: 2%;
+}
+
+.item-nav {
+    border: solid white 0.1vw;
+    border-radius: 2vw;
+    padding: 0.5% 1% 0.5% 1%; /*ordre : top right bottom left*/
+    white-space: nowrap;
+    color: white;
+    transition: 0.5s;
+    font-size: 1vw;
+}
+
+.item-nav a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.item-nav:hover{
+    background-color: white;
+    color: #116466;
+    border-color: #116466;
+}
+
+.item-nav a img{
+    margin: 0vw 0.3vw -0.5vw 0.1vw; /*ordre : top right bottom left*/
+    width: 1.5vw;
+}
+
+.triangle-nav {
+    transform: rotate(180deg) scale(0.8);
+}
+
+
+
+
+#recherche-nav{
+    border: solid white 0.1vw;
+    border-radius: 3vw;
+    padding: 0.5% 1% 0.5% 1%; /*ordre : top right bottom left*/
+    white-space: nowrap;
+    color: white;
+    transition: 0.5s;
+    font-size: 1vw;
+    text-align: center;
+}
+
+#recherche-nav label{
+    color: inherit;
+    text-decoration: none;
+}
+
+#recherche-nav a{
+    color: white;
+    text-decoration: none;
+}
+
+#recherche-nav:hover{
+    background-color: white;
+    color: #116466;
+    border-color: #116466;
+}
+
+#recherche-nav label img{
+    margin: 0vw 0.3vw -0.5vw 0.1vw; /*ordre : top right bottom left*/
+    width: 1.5vw;
+}
+
+#recherche-nav ul {
+    display: none;
+    position: absolute;
+    right: 62%;
+    background-color: #116466;
+    border-radius: 1vw;
+    height: auto;
+    width: 12%;
+    z-index: -1;
+    padding-bottom: 2%;
+}
+
+#recherche-nav input{
+    display: none;
+}
+
+#recherche-nav input[type="checkbox"]:checked+ul {
+    display: block;
+}
+
+#recherche-nav ul li {
+    display: block;
+    width: 100%;
+    margin-top: 15%;
+}
+
+
+
+
+
+#infos-contact-nav{
+    border: solid white 0.1vw;
+    border-radius: 3vw;
+    padding: 0.5% 1% 0.5% 1%; /*ordre : top right bottom left*/
+    white-space: nowrap;
+    color: white;
+    transition: 0.5s;
+    font-size: 1vw;
+    text-align: center;
+}
+
+#infos-contact-nav label{
+    color: inherit;
+    text-decoration: none;
+}
+
+#infos-contact-nav:hover{
+    background-color: white;
+    color: #116466;
+    border-color: #116466;
+}
+
+#infos-contact-nav a{
+    color: white;
+    text-decoration: none;
+}
+
+#infos-contact-nav label img{
+    margin: 0vw 0.3vw -0.5vw 0.1vw; /*ordre : top right bottom left*/
+    width: 1.5vw;
+}
+
+#infos-contact-nav ul {
+    display: none;
+    position: absolute;
+    right: 1.8%;
+    background-color: #116466;
+    border-radius: 1vw;
+    z-index: -1;
+    height: auto;
+    padding-bottom: 2%;
+    width: 11%;
+}
+
+#infos-contact-nav input{
+    display: none;
+}
+
+#infos-contact-nav input[type="checkbox"]:checked+ul {
+    display: block;
+}
+
+#infos-contact-nav ul li {
+    display: block;
+    width: 100%;
+    margin-top: 15%;
+}
+
+/*
+===================================================================
+======================FIN BARRE DE NAVIGATION======================
+===================================================================
+*/
 
 .titre{
    background-color:  #116466;
