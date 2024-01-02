@@ -294,8 +294,10 @@ footer a{
 
 
 #labisen-logo{
-    width : 50vw;
+    width : 40vw;
     height: auto;
+    margin-left : 5%;
+    margin-top : 5%;
 }
 
 .intro{
@@ -373,4 +375,8 @@ a{
     margin-left: 10%;
     font-size: 1.5rem;
 
+}
+
+#picture-main{
+    width: 100%;
 }
