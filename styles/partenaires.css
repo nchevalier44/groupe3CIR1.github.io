@@ -286,3 +286,83 @@ footer a{
 ============================FIN FOOTER=============================
 ===================================================================
 */
+
+
+#title{
+    
+    font-family: "Lekton Regular";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+
+.box{
+    color: #FFF;
+    margin-left : auto;
+    margin-right: auto;
+    margin-top: 3rem ;
+    width: 26.5rem;
+    height: 5rem;
+    padding: auto;
+    flex-shrink: 0;
+    border-radius: 2rem;
+    background: #116466;
+    
+}
+
+@keyframes dissolve {
+    from {
+        background-color: #116466;
+    }
+    to{
+        background-color: #D1E8E2;
+    }
+}
+
+.box:hover{
+    color : #116466; 
+    animation : dissolve 0.5s ease forwards;
+    border : 0.15rem solid ;
+    
+}
+
+.square_blue{
+    background-color: #1E3050;
+    width : 5rem;
+    height : 1rem;
+    margin-right: 10px;
+    
+}
+
+#partenaires{
+    width: 90%;
+    margin : auto ;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.logo{
+    width : 50% ;
+    height : auto ;
+}
+
+#nationaux{
+    grid-column: 1;
+    grid-row : span 6;
+}
+
+#internationaux{
+    grid-column: 2;
+    grid-row : span 3;
+}
+
+.title{
+    grid-column : 1 / span 2 ;
+    text-align: center;
+    
+}
+

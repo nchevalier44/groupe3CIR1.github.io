@@ -339,7 +339,7 @@ footer a{
 .title-box1{
     text-align: center;
     background-color: #1E3050;
-    width: 25vw;
+    width: 15rem;
     height: auto;
     margin : auto;
 }
@@ -386,7 +386,7 @@ footer a{
 .title-box2{
     text-align: center;
     background-color: #D9B08C;
-    width: 25vw;
+    width: 15rem;
     height: auto;
     margin : auto;
 }
@@ -396,4 +396,8 @@ footer a{
     width : 2rem;
     height : 1rem;
     margin-right: 10px;
+}
+
+#picture-main{
+    width: 100%;
 }
