@@ -7,6 +7,7 @@
 
 body{
     background-color: #D1E8E2;
+    font-family: "Lekton Regular";
 }
 
 #title{
@@ -52,6 +53,7 @@ body{
 
 .axe{
     font-weight :bold;
+    font-size: 2rem;
 }
 
 .txt{
@@ -59,8 +61,4 @@ body{
     font-family: "Lekton Regular";
     font-size : 2rem;
 
-}
-
-.axe{
-    font-weight: bold;
 }
