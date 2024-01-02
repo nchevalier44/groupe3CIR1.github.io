@@ -379,6 +379,6 @@ a{
 
 #picture-main{
     width: 100%;
-    background: url(images/picture-main.jpg), lightgray 50% / cover no-repeat;
+    background: url(images/picture-main.jpg), lightgray 75% , cover no-repeat;
     mix-blend-mode: overlay;
 }
