@@ -332,9 +332,10 @@ footer a{
 
 .square_blue{
     background-color: #1E3050;
-    width : 5rem;
-    height : 1rem;
-    margin-right: 10px;
+    width : 14rem;
+    height : 2rem;
+    margin-left: 25%;
+    border-radius: 1rem;
     
 }
 
@@ -346,8 +347,20 @@ footer a{
 }
 
 .logo{
-    width : 50% ;
+    width : 35%;
     height : auto ;
+    margin : 2rem ;
+}
+
+.logo1{
+    width : 45%;
+    height: auto;
+    margin : 2rem ;
+    margin-left : 8rem;
+}
+
+.logo:nth-child(2n+1){
+    grid-column: 1;
 }
 
 #nationaux{
@@ -363,6 +376,10 @@ footer a{
 .title{
     grid-column : 1 / span 2 ;
     text-align: center;
+    color : white;
+    font-weight: bold;
+    font-size : 1.5rem ;
+    
     
 }
 
