@@ -15,7 +15,6 @@ body{
     background-color: #D1E8E2;
     max-width: 100%;
     overflow-x: hidden;
-    z-index: -2;
 }
 
 
@@ -120,8 +119,9 @@ nav {
     border-radius: 1vw;
     height: auto;
     width: 12%;
-    z-index: -1;
     padding-bottom: 2%;
+    z-index: 1;
+    margin-top: 1%;
 }
 
 #recherche-nav input{
@@ -136,7 +136,7 @@ nav {
 #recherche-nav ul li {
     display: block;
     width: 100%;
-    margin-top: 15%;
+    margin-top: 10%;
 }
 
 
@@ -181,10 +181,11 @@ nav {
     right: 1.8%;
     background-color: #116466;
     border-radius: 1vw;
-    z-index: -1;
     height: auto;
     padding-bottom: 2%;
     width: 11%;
+    z-index: 1;
+    margin-top: 1%;
 }
 
 #infos-contact-nav input{
@@ -198,11 +199,33 @@ nav {
 #infos-contact-nav ul li {
     display: block;
     width: 100%;
-    margin-top: 15%;
+    margin-top: 10%;
 }
 
 /*
 ===================================================================
 ======================FIN BARRE DE NAVIGATION======================
+===================================================================
+*/
+
+
+
+
+/*
+===================================================================
+===========================DEBUT FOOTER============================
+===================================================================
+*/
+
+footer{
+    background-color: #116466;
+    width: 100%;
+}
+
+
+
+/*
+===================================================================
+============================FIN FOOTER=============================
 ===================================================================
 */
