@@ -320,11 +320,18 @@ footer a{
 
 }
 
-#living-lab{
-    margin-left: 50%;
-    margin-right: 5%;
+.txt{
+    margin-left : 5% ;
     text-align: justify;
 }
+
+#living-lab{
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
 
 .texte-living_lab{
     
