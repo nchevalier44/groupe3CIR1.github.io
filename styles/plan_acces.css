@@ -316,7 +316,7 @@ footer a{
  }
 
 .moyens_de_transports{
-    margin-left : 10% ;
+    margin-left : 12% ;
 }
 
 
@@ -335,12 +335,18 @@ footer a{
     margin-left: -7rem;
  }
  
+ .en-bus{
+    margin-left: -1.5%;
+ }
  .en-bus span{
     display: inline-block;
-    margin-left: -7rem;
+    margin-left: -6rem;
  }
  
+ .en-car{
+    margin-left: -1.5%;
+ }
  .en-car span {
     display: inline-block;
-    margin-left: -7rem;
+    margin-left: -6rem;
  }
