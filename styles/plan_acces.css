@@ -286,3 +286,33 @@ footer a{
 ============================FIN FOOTER=============================
 ===================================================================
 */
+
+#isen{
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+
+
+
+}
+
+.titre{
+    background-color:  #116466;
+    border-radius: 2.5vw;
+    width: 30%;
+    height: 8%;
+    align-content: center;
+    margin:auto;
+    padding: auto;
+    text-align: center;
+    color: white;
+ 
+ }
+
+ .sous-titre{
+    text-align: center;
+    color: black;
+
+ }
+
+ 
