@@ -5,6 +5,13 @@
     src: url('../font/Lekton-Regular.woff') format('woff');
 }
 
+@font-face {
+    font-family: "Lohit Devanagari";
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/Lohit-Devanagari.ttf') format('truetype');
+}
+
 * {
     padding: 0;
     margin: 0;
