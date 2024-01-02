@@ -117,8 +117,9 @@ nav {
     border-radius: 1vw;
     height: auto;
     width: 12%;
-    z-index: -1;
+    z-index: 1;
     padding-bottom: 2%;
+    margin-top: 1%;
 }
 
 #recherche-nav input{
@@ -177,10 +178,11 @@ nav {
     right: 1.8%;
     background-color: #116466;
     border-radius: 1vw;
-    z-index: -1;
+    z-index: 1;
     height: auto;
     padding-bottom: 2%;
     width: 11%;
+    margin-top: 1%;
 }
 
 #infos-contact-nav input{
@@ -194,7 +196,7 @@ nav {
 #infos-contact-nav ul li {
     display: block;
     width: 100%;
-    margin-top: 15%;
+    margin-top: 10%;
 }
 
 /*

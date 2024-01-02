@@ -120,8 +120,9 @@ nav {
     border-radius: 1vw;
     height: auto;
     width: 12%;
-    z-index: -1;
+    z-index: 1;
     padding-bottom: 2%;
+    margin-top: 1%;
 }
 
 #recherche-nav input{
@@ -135,7 +136,7 @@ nav {
 #recherche-nav ul li {
     display: block;
     width: 100%;
-    margin-top: 15%;
+    margin-top: 10%;
 }
 
 
@@ -180,10 +181,11 @@ nav {
     right: 1.8%;
     background-color: #116466;
     border-radius: 1vw;
-    z-index: -1;
+    z-index: 1;
     height: auto;
     padding-bottom: 2%;
     width: 11%;
+    margin-top: 1%;
 }
 
 #infos-contact-nav input{
@@ -197,7 +199,7 @@ nav {
 #infos-contact-nav ul li {
     display: block;
     width: 100%;
-    margin-top: 15%;
+    margin-top: 10%;
 }
 
 /*
@@ -210,22 +212,24 @@ nav {
     color:#116466;
     text-align: left;
     font-size: 250%;
+    margin: auto;
     margin-left: 2%;
 
 }
 
 .intro{
     font-size: 1,5vw;
+    margin: auto;
+    text-align: justify;
     margin-left: 2%;
     margin-right: 2%;
-    text-align: justify;
 }
 
-hr{
-    height: 0.1vw;
+.barre{
     background-color: black;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin :auto;
+    width: 95%;
+    height: 1px;  
 }
 
 .sous-titre{
