@@ -246,6 +246,11 @@ nav {
     
 }
 
+#content{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
 .axe{
     font-weight :bold;
     font-size: 2rem;

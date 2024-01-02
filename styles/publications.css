@@ -206,7 +206,7 @@ nav {
 ===================================================================
 */
 
-#title{
+#title1{
     
     font-family: "Lekton Regular";
     font-size: 2rem;
@@ -253,4 +253,66 @@ nav {
     margin :auto;
     width: 95%;
     height: 2px;  
+}
+
+.title-box1{
+    text-align: center;
+    background-color: #1E3050;
+    width: 25vw;
+    height: auto;
+    margin : auto;
+}
+
+.title2{
+    text-align: center;
+    color: white;
+
+}
+
+.publications{
+    width : 80% ;
+    margin : auto;
+    display: flex;
+    
+    
+}
+
+.publications_txt{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.square_blue{
+    background-color: #1E3050;
+    width : 2rem;
+    height : 1rem;
+    margin-right: 10px;
+    
+}
+
+
+
+.content_pub{
+    margin : 0;
+}
+
+.blue_txt{
+    color: #116466;
+    
+}
+
+.title-box2{
+    text-align: center;
+    background-color: #D9B08C;
+    width: 25vw;
+    height: auto;
+    margin : auto;
+}
+
+.square_yellow{
+    background-color: #D9B08C;
+    width : 2rem;
+    height : 1rem;
+    margin-right: 10px;
 }
