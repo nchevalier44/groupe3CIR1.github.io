@@ -205,6 +205,80 @@ nav {
 ===================================================================
 ======================FIN BARRE DE NAVIGATION======================
 ===================================================================
+*/ 
+
+/*
+===================================================================
+===========================DEBUT FOOTER============================
+===================================================================
+*/
+
+footer{
+    font-family: "Lohit Devanagari";
+    background-color: #116466;
+    color: white;
+    display: grid;
+    grid-template-columns: 0.90fr 1fr;
+    gap: 2%;
+    padding: 4%;
+    width: 100%;
+}
+
+footer h2{
+    font-size: 2.5vw;
+    margin-bottom: 7%;
+}
+
+#colonne-gauche-footer h2{
+    margin-left: 35%;
+}
+
+#colonne-droite-footer h2{
+    margin-left: 25%;
+}
+
+#colonne-gauche-footer ul{
+    list-style-type: none;
+    font-size: 1.5vw;
+}
+
+#colonne-droite-footer ul{
+    list-style-type: none;
+    font-size: 1.8vw;
+}
+
+footer a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.li-campus-footer{
+    margin-bottom: 3%;
+}
+.icone-insta{
+    width: 5%;
+    margin-bottom: -0.4vw;
+}
+
+#labisen-footer{
+    width: 80%;
+    margin-top: 13%;
+    margin-left: 5%;
+}
+
+#colonne-gauche-footer{
+    border-right: solid #D1E8E2 0.2vw;
+}
+
+#reseaux-footer li{
+    margin-left: 34%;
+    margin-bottom: 3%;
+}
+
+/*
+===================================================================
+============================FIN FOOTER=============================
+===================================================================
 */
 
 .titre{
