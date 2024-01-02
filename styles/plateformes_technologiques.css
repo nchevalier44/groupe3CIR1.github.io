@@ -210,22 +210,24 @@ nav {
     color:#116466;
     text-align: left;
     font-size: 250%;
+    margin: auto;
     margin-left: 2%;
 
 }
 
 .intro{
     font-size: 1,5vw;
+    margin: auto;
+    text-align: justify;
     margin-left: 2%;
     margin-right: 2%;
-    text-align: justify;
 }
 
-hr{
-    height: 0.1vw;
+.barre{
     background-color: black;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin :auto;
+    width: 95%;
+    height: 1px;  
 }
 
 .sous-titre{
