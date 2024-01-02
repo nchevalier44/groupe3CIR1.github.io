@@ -329,8 +329,7 @@ footer a{
 }
 
 #content{
-    margin-left: 3%;
-    margin-right: 3%;
+    margin: 3%;
 }
 
 .axe{
@@ -341,6 +340,6 @@ footer a{
 .txt{
     text-align: justify;
     font-family: "Lekton Regular";
-    font-size : 2rem;
+    font-size : 1.5vw;
 
 }
