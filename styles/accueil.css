@@ -291,3 +291,52 @@ footer a{
 ============================FIN FOOTER=============================
 ===================================================================
 */
+
+
+#labisen-logo{
+    width : 50vw;
+    height: auto;
+}
+
+
+
+#title{
+    
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+    text-align: center;
+    padding-top: 0.52rem;
+}
+
+
+.button{
+    color: #FFF;
+    margin-left: 3%;
+    margin-top: 3rem ;
+    width: 18rem;
+    height: 3rem;
+    padding: auto;
+    flex-shrink: 0;
+    border-radius: 2rem;
+    background: #116466;
+    
+}
+
+@keyframes dissolve {
+    from {
+        background-color: #116466;
+    }
+    to{
+        background-color: #D1E8E2;
+    }
+}
+
+.button:hover{
+    color : #116466; 
+    animation : dissolve 0.5s ease forwards;
+    border : 0.15rem solid ;
+    
+}
+
