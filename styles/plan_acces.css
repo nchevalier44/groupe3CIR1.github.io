@@ -322,31 +322,35 @@ footer a{
 
  .en-avion span {
     display: inline-block;
-    margin-left: -7rem;
+    margin-left: -9%;
  }
 
  .en-train span{
     display: inline-block;
-    margin-left: -7rem;
+    margin-left: -9%;
+ }
+
+ .en-voiture{
+    margin-left: 1.5%;
  }
  
  .en-voiture span{
     display: inline-block;
-    margin-left: -7rem;
+    margin-left: -11%;
  }
  
  .en-bus{
-    margin-left: -1.5%;
+    margin-left: -0.5%;
  }
  .en-bus span{
     display: inline-block;
-    margin-left: -6rem;
+    margin-left: -9%;
  }
  
  .en-car{
-    margin-left: -1.5%;
+    margin-left: -0.5%;
  }
  .en-car span {
     display: inline-block;
-    margin-left: -6rem;
+    margin-left: -9%;
  }
