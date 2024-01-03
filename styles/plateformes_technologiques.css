@@ -296,7 +296,7 @@ footer a{
     font-size: 250%;
     margin: auto;
     margin-left: 2%;
-
+    margin-top: 1%;
 }
 
 .intro{
@@ -356,5 +356,9 @@ img{
     margin-right: 2%;
     text-align: justify;
 
+}
+
+#environnement .sous-titre{
+    margin-top: 1%;
 }
 
