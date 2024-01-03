@@ -286,3 +286,108 @@ footer a{
 ============================FIN FOOTER=============================
 ===================================================================
 */
+
+#contact-all{
+    position: relative;
+    height: 62vw;
+    margin: 7% 20% 7% 20%; /*ordre : top right bottom left*/
+}
+
+#contact-before{
+    position: absolute;
+    height: 100%;
+    background-color: #FFCB9A;
+    border-radius: 100px;
+    text-align: center;
+    z-index: 0;
+    width: 100%;
+    
+}
+
+#contact-before ul{
+    list-style-type: none;
+}
+
+#contact-before h1{
+    font-size: 3vw;
+    font-weight: bolder;
+    padding-top: 7%;
+}
+
+#contact-before p{
+    font-size: 1.3vw;
+    margin-bottom: 5%;
+}
+
+form input {
+    border: solid black 0.15vw;
+    border-radius: 15px;
+    background-color: transparent;
+    width: 70%;
+    font-size: 1.1vw;
+    margin-bottom: 4%;
+    height: 1.5vw;
+    font-family: "Lekton Regular";
+    padding: 2%;
+    color: #2C3531;
+}
+
+form textarea{
+    border: solid black 0.15vw;
+    border-radius: 15px;
+    background-color: transparent;
+    max-width: 70%;
+    min-width: 70%;
+    max-height: 20vw;
+    min-height: 20vw;
+    font-size: 1.1vw;
+    margin-bottom: 5%;
+    font-family: "Lekton Regular";
+    padding: 2%;
+    color: #2C3531;
+
+}
+
+form button{
+    background-color: #D9B08C;
+    color: white;
+    border-radius: 25px;
+    padding: 1% 6% 1% 6%; /*ordre : top right bottom left*/
+    font-family: "Lekton Regular";
+    font-weight: bold;
+    font-size: 1.5vw;
+    margin-bottom: 8%;
+    border: solid #D9B08C 0.15vw;
+    transition: all 0.5s ease-in-out;
+
+}
+
+form button:hover{
+    background-color: white;
+    color: #D9B08C;
+}
+
+#contact-before:target{
+    visibility: hidden;
+}
+
+#contact-after{
+    position: absolute;
+    background-color: #FFCB9A;
+    border-radius: 100px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+#contact-after h1{
+    font-size: 3vw;
+    font-weight: bolder;
+    padding-top: 30%;
+}
+
+#contact-after p{
+    font-size: 2vw;
+    margin-bottom: 5%;
+}
