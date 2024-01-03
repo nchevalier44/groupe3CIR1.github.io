@@ -69,7 +69,7 @@ nav {
 }
 
 .item-nav:hover{
-    background-color: white;
+    background-color: #D1E8E2;
     color: #116466;
     border-color: #116466;
 }
@@ -108,7 +108,7 @@ nav {
 }
 
 #recherche-nav:hover{
-    background-color: white;
+    background-color: #D1E8E2;
     color: #116466;
     border-color: #116466;
 }
@@ -166,7 +166,7 @@ nav {
 }
 
 #infos-contact-nav:hover{
-    background-color: white;
+    background-color: #D1E8E2;
     color: #116466;
     border-color: #116466;
 }
