@@ -288,12 +288,8 @@ footer a{
 */
 
 .enseignants-chercheurs{
-
     margin-left: 20%;
     margin-right: 20%;
-
-
-
 }
 
 .titre{
@@ -311,36 +307,21 @@ footer a{
 
 }
 
-.card .header{
+.header{
     background-color: #FFCB9A;
-    display: flex;
-    justify-content: center;
-    
-    
-
+    padding: 5%;
 }
 
 .card{
-
-    display: flex;
-    flex-direction: column;
     background-color: #D9B08C;
     margin-left: 30%;
     margin-right: 30%;
-    
+    text-align: center;
 }
 
-.card .photo{
-
+.photo{
     width: 30%;
     border-radius: 50%;
-    display: flex;
-    margin left: 50%;
-    justify-content: center;
-    margin-top: 5%;
-    margin-bottom:5%;
-
-
 
 }
 
@@ -348,62 +329,57 @@ footer a{
     font-family: "Lohit Devanagari";
 }
 
-.prénom-nom{
+.prenom-nom{
     color: black;
-    text-align: center;
     font-size: 2vw;
+    margin-top: 2%;
+
 }
 
 .infos{
-
     color:white;
     font-size: 1vw;
     text-align: center;
     margin:auto;
-
 }
 
 .content .barre{
-
     background-color: black;
-    height:2px;
-    margin-left:10%;
-    margin-right: 10%;
-    
-
+    height: 0.2vw;
+    margin-top: 8%;
+    width: 85%;
 }
 
-.réseaux{
-    
-    display:flex;
-    justify-content: space-around;
-    margin-top: 3%;
-    margin-left: 10%;
-    margin-right: 10%;
-
-
+.reseaux li{
+    display: inline-block;
+    width: 15%;
+    height: 15%;
+    margin: 2%;
 }
 
-.réseaux img{
-    border-radius: 0%;
-    width: 250%;
-    
+.reseaux img{
+    width: 100%;
+    height: 100%;
+}
+
+.keywords ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 0.3vw;
+}
+
+.keywords ul li{
+    color: white;
+    background-color: #1E3050;
+    height: 20%;
+    width: 45%;
+    border-radius: 2rem;
+    padding: 1%;
 }
 
 .keywords{
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: #1E3050;
-    border-radius: 2rem;
-    color: white;
-    text-align: center;
-    height: 20%;
-    width: 40%;
-    font-size: 1vw;
-    padding:auto;
-    margin:auto;
-
-
+    padding-bottom: 3%;
 }
