@@ -316,10 +316,11 @@ footer a{
 
 .barre{
     background-color: black;
-    
     margin:auto;
     width: 100%;
-    height: 1px;  
+    height: 1px;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .projets-en-cours , .projets-achevés{
