@@ -288,15 +288,23 @@ footer a{
 */
 
 
-#title{
-    
-    font-family: "Lekton Regular";
+#title1{
     font-size: 2rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     text-align: center;
     padding-top: 1rem;
+}
+
+.title2{
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+    color: #D1E8E2;
+    
 }
 
 
