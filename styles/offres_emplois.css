@@ -286,3 +286,69 @@ footer a{
 ============================FIN FOOTER=============================
 ===================================================================
 */
+
+
+#title{
+    
+    font-family: "Lekton Regular";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+
+.box{
+    color: #FFF;
+    margin-left : auto;
+    margin-right: auto;
+    margin-top: 3rem ;
+    width: 26.5rem;
+    height: 5rem;
+    padding: auto;
+    flex-shrink: 0;
+    border-radius: 2rem;
+    background: #116466;
+    
+}
+
+@keyframes dissolve {
+    from {
+        background-color: #116466;
+    }
+    to{
+        background-color: #D1E8E2;
+    }
+}
+
+.box:hover{
+    color : #116466; 
+    animation : dissolve 0.5s ease forwards;
+    border : 0.15rem solid ;
+    
+}
+
+#content{
+    margin: 0 5%;
+}
+
+.axe{
+    font-weight :bold;
+    font-size: 2rem;
+}
+
+.txt{
+    text-align: justify;
+    font-family: "Lekton Regular";
+    font-size : 1.5vw;
+
+}
+
+li {
+    text-align: justify;
+    font-family: "Lekton Regular";
+    font-size : 1.5vw;
+
+}
