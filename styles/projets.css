@@ -292,7 +292,8 @@ footer a{
 
 .titre{
    background-color:  #116466;
-   border-radius: 2.5vw;
+   border-radius: 2rem;
+   border: 0.15rem solid #116466;
    width: 30%;
    height: 8%;
    align-content: center;
