@@ -367,6 +367,7 @@ form button:hover{
     color: #D9B08C;
 }
 
+
 #contact-before:target{
     visibility: hidden;
 }
