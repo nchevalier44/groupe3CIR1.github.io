@@ -4,14 +4,12 @@
     font-weight: normal;
     src: url('../font/Lekton-Regular.woff') format('woff');
 }
-
 @font-face {
     font-family: "Lohit Devanagari";
     font-style: normal;
     font-weight: normal;
     src: url('../font/Lohit-Devanagari.ttf') format('truetype');
 }
-
 * {
     padding: 0;
     margin: 0;
@@ -22,27 +20,22 @@ body{
     background-color: #D1E8E2;
     max-width: 100%;
     overflow-x: hidden;
-
 }
-
 /*
 ===================================================================
 ======================DEBUT BARRE DE NAVIGATION====================
 ===================================================================
 */
-
 nav {
     background-color: #116466;
     display: inline flex;
     padding: 1%;
     width: 100%;
 }
-
 #labisen-nav{
     width: 12%;
     height: 12%;
 }
-
 #navbar{
     display: flex;
     justify-content: space-around;
@@ -52,7 +45,6 @@ nav {
     border-left: solid #D1E8E2 0.1vw;
     margin-left: 2%;
 }
-
 .item-nav {
     border: solid white 0.1vw;
     border-radius: 2vw;
@@ -62,30 +54,22 @@ nav {
     transition: 0.5s;
     font-size: 1vw;
 }
-
 .item-nav a{
     color: inherit;
     text-decoration: none;
 }
-
 .item-nav:hover{
     background-color: #D1E8E2;
     color: #116466;
     border-color: #116466;
 }
-
 .item-nav a img{
     margin: 0vw 0.3vw -0.5vw 0.1vw; /*ordre : top right bottom left*/
     width: 1.5vw;
 }
-
 .triangle-nav {
     transform: rotate(180deg) scale(0.8);
 }
-
-
-
-
 #recherche-nav{
     border: solid white 0.1vw;
     border-radius: 3vw;
@@ -96,28 +80,23 @@ nav {
     font-size: 1vw;
     text-align: center;
 }
-
 #recherche-nav label{
     color: inherit;
     text-decoration: none;
 }
-
 #recherche-nav a{
     color: white;
     text-decoration: none;
 }
-
 #recherche-nav:hover{
     background-color: #D1E8E2;
     color: #116466;
     border-color: #116466;
 }
-
 #recherche-nav label img{
     margin: 0vw 0.3vw -0.5vw 0.1vw; /*ordre : top right bottom left*/
     width: 1.5vw;
 }
-
 #recherche-nav ul {
     display: none;
     position: absolute;
@@ -130,25 +109,17 @@ nav {
     padding-bottom: 2%;
     margin-top: 1%;
 }
-
 #recherche-nav input{
     display: none;
 }
-
 #recherche-nav input[type="checkbox"]:checked+ul {
     display: block;
 }
-
 #recherche-nav ul li {
     display: block;
     width: 100%;
     margin-top: 10%;
 }
-
-
-
-
-
 #infos-contact-nav{
     border: solid white 0.1vw;
     border-radius: 3vw;
@@ -159,28 +130,23 @@ nav {
     font-size: 1vw;
     text-align: center;
 }
-
 #infos-contact-nav label{
     color: inherit;
     text-decoration: none;
 }
-
 #infos-contact-nav:hover{
     background-color: #D1E8E2;
     color: #116466;
     border-color: #116466;
 }
-
 #infos-contact-nav a{
     color: white;
     text-decoration: none;
 }
-
 #infos-contact-nav label img{
     margin: 0vw 0.3vw -0.5vw 0.1vw; /*ordre : top right bottom left*/
     width: 1.5vw;
 }
-
 #infos-contact-nav ul {
     display: none;
     position: absolute;
@@ -193,33 +159,27 @@ nav {
     width: 11%;
     margin-top: 1%;
 }
-
 #infos-contact-nav input{
     display: none;
 }
-
 #infos-contact-nav input[type="checkbox"]:checked+ul {
     display: block;
 }
-
 #infos-contact-nav ul li {
     display: block;
     width: 100%;
     margin-top: 10%;
 }
-
 /*
 ===================================================================
 ======================FIN BARRE DE NAVIGATION======================
 ===================================================================
 */ 
-
 /*
 ===================================================================
 ===========================DEBUT FOOTER============================
 ===================================================================
 */
-
 footer{
     font-family: "Lohit Devanagari";
     background-color: #116466;
@@ -230,35 +190,28 @@ footer{
     padding: 4%;
     width: 100%;
 }
-
 footer h2{
     font-size: 2.5vw;
     margin-bottom: 7%;
 }
-
 #colonne-gauche-footer h2{
     margin-left: 35%;
 }
-
 #colonne-droite-footer h2{
     margin-left: 25%;
 }
-
 #colonne-gauche-footer ul{
     list-style-type: none;
     font-size: 1.5vw;
 }
-
 #colonne-droite-footer ul{
     list-style-type: none;
     font-size: 1.8vw;
 }
-
 footer a{
     text-decoration: none;
     color: inherit;
 }
-
 .li-campus-footer{
     margin-bottom: 3%;
 }
@@ -266,40 +219,41 @@ footer a{
     width: 5%;
     margin-bottom: -0.4vw;
 }
-
 #labisen-footer{
     width: 80%;
     margin-top: 13%;
     margin-left: 5%;
 }
-
 #colonne-gauche-footer{
     border-right: solid #D1E8E2 0.2vw;
 }
-
 #reseaux-footer li{
     margin-left: 34%;
     margin-bottom: 3%;
 }
-
 /*
 ===================================================================
 ============================FIN FOOTER=============================
 ===================================================================
 */
-
-
-
 .titre{
    background-color:  #116466;
-   border-radius: 2rem;
-   border: 0.15rem solid #116466;
+   border-radius: 2.5vw;
    width: 30%;
    height: 8%;
    align-content: center;
-   margin:auto;
-   padding: auto;
-
+   margin: auto;
+   color: white;
+   border : 0.15rem solid #116466;
+   margin-top: 3%;
+}
+.titre h1{
+    color: inherit;
+    text-align: center;
+    font-size: 2.5vw;
+    font-family: "Lekton Regular";
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 @keyframes dissolve {
@@ -311,30 +265,17 @@ footer a{
     }
 }
 
-
 .titre:hover{
     color : #116466; 
     animation : dissolve 0.5s ease forwards;
 }
 
-
-.titre h1{
-    color: white;
-    text-align: center;
-    font-size: 2.5vw;
-    font-family: "Lekton Regular";
-    padding-top: 3%;
-    padding-bottom: 3%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-
-
-
 .barre{
     background-color: black;
+
     margin:auto;
     width: 100%;
+    height: 1px;  
     height: 1px;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -345,10 +286,8 @@ footer a{
     font-size: 1.5vw;
     margin:3%;
    
-
     text-align: justify;
 }
-
 .sous-titre{
     color: #116466;
 }
