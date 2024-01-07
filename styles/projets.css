@@ -301,6 +301,22 @@ footer a{
 
 }
 
+@keyframes dissolve {
+    from {
+        background-color: #116466;
+    }
+    to{
+        background-color: #D1E8E2;
+    }
+}
+
+
+.titre:hover{
+    color : #116466; 
+    animation : dissolve 0.5s ease forwards;
+}
+
+
 .titre h1{
     color: white;
     text-align: center;
