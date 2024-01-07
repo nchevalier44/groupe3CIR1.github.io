@@ -367,8 +367,10 @@ footer a{
 
 .square_blue{
     background-color: #1E3050;
-    width : 2rem;
-    height : 1rem;
+    max-width : 25px;
+    min-width: 25px;
+    max-height : 25px;
+    min-height: 25px;
     margin-right: 10px;
     
 }
@@ -394,8 +396,10 @@ footer a{
 
 .square_yellow{
     background-color: #D9B08C;
-    width : 2rem;
-    height : 1rem;
+    max-width : 25px;
+    min-width: 25px;
+    max-height : 25px;
+    min-height: 25px;
     margin-right: 10px;
 }
 
