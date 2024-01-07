@@ -359,11 +359,13 @@ footer a{
 .logo{
     width : 35%;
     height : auto ;
-    margin : 2rem ;
+    margin-top : 2rem ;
+    margin-left : 0% ;
+    margin-right : 0rem ;
 }
 
 .logo1{
-    width : 45%;
+    width : 35%;
     height: auto;
     margin : 2rem ;
     margin-left : 8rem;
@@ -373,11 +375,15 @@ footer a{
     grid-column: 1;
 }
 
+#partenaires{
+    width: 100%;
+    height: auto;
+}
+
 #nationaux{
     grid-column: 1;
     grid-row : span 6;
-    margin-right : 10% ;
-    margin-left : 10%
+    margin-left : 10% ;
 }
 
 #internationaux{
@@ -400,3 +406,22 @@ a{
     color: inherit;
     text-decoration: none;
 }
+
+.logo_partenaires{
+    width: 50%;
+    height: auto;
+}
+
+.tags{
+    text-align: left;
+    margin-top: 5px;
+}
+
+.tags p {
+
+    background-color: #1E3050;
+    color: #D1E8E2;
+    border-radius: 5px;
+    display: inline-block;
+}
+

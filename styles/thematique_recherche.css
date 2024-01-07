@@ -309,6 +309,8 @@ footer a{
     flex-shrink: 0;
     border-radius: 2rem;
     background: #116466;
+    border : 0.15rem solid #116466;
+
     
 }
 
@@ -324,7 +326,6 @@ footer a{
 .box:hover{
     color : #116466; 
     animation : dissolve 0.5s ease forwards;
-    border : 0.15rem solid ;
     
 }
 
@@ -342,4 +343,10 @@ footer a{
     font-family: "Lekton Regular";
     font-size : 1.5vw;
 
+}
+
+#picture-main{
+    width: 100%;
+    background: url(images/picture-main.jpg), lightgray 75% , cover no-repeat;
+    mix-blend-mode: overlay;
 }

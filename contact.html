@@ -64,9 +64,15 @@
             <div id="contact-before">
                 <h1>Contactez-nous !</h1>
                 <p>Merci de remplir ce formulaire de manière décente</p>
-            
-                <form action="contact.html#contact-before" method="post">
                 
+                
+                <form action="contact.html#contact-before" method="get">
+                <!-- 
+                La méthode est GET car la méthode POST provoque l'erreur "405 not allowed" sur github
+                Dans action j'ai mis action="contact.html#contact-before" pour faire afficher le div avec l'id "contact-after" 
+                puisque qu'on n'a pas javascript pour le faire.
+                 -->
+
                     <ul>
                         <li><input type="text" name="nom" value="Nom et prénom"/></li>
                         <li><input type="" name="email" value="Email"/></li>

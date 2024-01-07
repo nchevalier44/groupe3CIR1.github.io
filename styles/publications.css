@@ -332,7 +332,7 @@ footer a{
 .barre{
     background-color: black;
     margin :auto;
-    width: 95%;
+    width: 85%;
     height: 2px;  
 }
 
@@ -367,10 +367,12 @@ footer a{
 
 .square_blue{
     background-color: #1E3050;
-    width : 2rem;
-    height : 1rem;
+    max-width : 215px;
+    min-width: 15px;
+    max-height : 15px;
+    min-height: 15px;
     margin-right: 10px;
-    
+    margin-top: 5px;
 }
 
 
@@ -394,9 +396,12 @@ footer a{
 
 .square_yellow{
     background-color: #D9B08C;
-    width : 2rem;
-    height : 1rem;
+    max-width : 15px;
+    min-width: 15px;
+    max-height : 15px;
+    min-height: 15px;
     margin-right: 10px;
+    margin-top: 5px;
 }
 
 #picture-main{
