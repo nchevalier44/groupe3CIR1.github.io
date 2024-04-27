@@ -1,1 +1,1 @@
-console.log("hey");
+console.log(document.getElementById("labisen-logo"));
