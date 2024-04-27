@@ -2,13 +2,20 @@
 
 function zoomCompetences(){
     let competences = document.getElementById("competences");
-    console.log(competences.style.transform);
     if(competences.style.transform == "" || competences.style.transform == "scale(1, 1) translate(0px, 0px)"){
-        competences.style.transform = "scale(2, 2) translate(-25%, 0)"; //Zoomer x2 et le mettre au milieu de la page pour qu'il soit visible
+        competences.style.transform = "scale(2, 2) translate(-23%, 0)"; //Zoomer x2 et le mettre au milieu de la page pour qu'il soit visible
         competences.style.cursor = "zoom-out";
+        let f = document.getElementsByClassName("flou");
+        for(let i = 0; i<f.length; i++){
+            f[i].style.filter = "blur(5px)";
+        }
     } else{
         competences.style.transform = "scale(1, 1) translate(0, 0)"; //Réinitialiser au zoom et à la position de départ
         competences.style.cursor = "zoom-in";
+        let f = document.getElementsByClassName("flou");
+        for(let i = 0; i<f.length; i++){
+            f[i].style.filter = "blur(0)";
+        }
     }
 }
 
@@ -62,6 +69,7 @@ quiSommesNous.style.textAlign = "center";
 quiSommesNous.style.fontSize = "5vw";
 quiSommesNous.style.fontWeight = "bold";
 quiSommesNous.style.marginTop = "5%";
+quiSommesNous.className = "flou";
 
 //Ajouter les propriétés pour la translation et animation
 quiSommesNous.style.transitionDuration = "1.5s";
