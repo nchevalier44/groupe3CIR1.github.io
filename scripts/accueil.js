@@ -42,6 +42,7 @@ function effaceQuiSommesNous(){
     }, 100);
 }
 
+
 function animationQuiSommesNous(){
     if(i < texteTab.length){
         quiSommesNous.innerText = quiSommesNous.textContent.concat(texteTab[i]);
@@ -61,6 +62,7 @@ function animationQuiSommesNous(){
     }
 }
 
+//Initialisation de la balise paragraphe contenant le texte "Qui sommes-nous ?"
 let quiSommesNous = document.createElement("p");
 let logoLabIsen = document.getElementById("labisen-logo");
 document.body.insertBefore(quiSommesNous, logoLabIsen);
@@ -71,7 +73,7 @@ quiSommesNous.style.fontWeight = "bold";
 quiSommesNous.style.marginTop = "5%";
 quiSommesNous.className = "flou";
 
-//Ajouter les propriétés pour la translation et animation
+//Ajouts des propriétés de la translation et de l'animation
 quiSommesNous.style.transitionDuration = "1.5s";
 quiSommesNous.style.transitionProperty = "transform";
 
