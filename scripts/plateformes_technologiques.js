@@ -1,17 +1,13 @@
 
-let title = document.getElementById("sous-titre");
-let modal = document.querySelector(".modal");
-let span = document.getElementsByClassName("close")[0];
+let modalContainer = document.querySelector(".modal-container");
+let modalTriggers = document.querySelector(".modal-trigger");
 
 
-
-function openModal(){
-    modal.style.display = "block";
+function modalTrigger(){
+    modalTriggers.forEach(trigger => trigger.addEventListener("click",toggleModal)); //addEventListener permet d'appliquer la fonction toggleModal à chaque clic de l'utilisateur
 }
 
-function closeModal(){
-    modal.style.display = "none";
+function toggleModal(){
+    modalContainer.classList.toggle("active");   //gérér l'ajout ou la suppression d'une classe active(qui va rendre notre page ouverte ou fermée)
 }
 
-title.onclick = openModal();
-span.onclick = closeModal();
