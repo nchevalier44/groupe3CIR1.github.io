@@ -322,6 +322,7 @@ footer a{
 
 #sous-titre:hover{
     color : white;
+    transition: 1s;
 }
 
 .txt{
@@ -379,11 +380,11 @@ img{
 }
 
 .modal-container.active{
-    display: block;
+    /*display: block;*/
     visibility: visible;
 }
 
-.modal-container.active, .overlay{
+.modal-container.active .overlay{
     opacity: 1;
     transition: opacity 0.4s ease-out;
 }
