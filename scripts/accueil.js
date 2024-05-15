@@ -31,7 +31,6 @@ competences.addEventListener("click", zoomCompetences);
 function effaceQuiSommesNous(){
     let n = texte.length;
     let inter = setInterval(function() {
-        console.log(n);
         if(n >= 0){
             quiSommesNous.innerText = quiSommesNous.textContent.substring(0, n);
             n--;
