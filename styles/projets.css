@@ -272,9 +272,21 @@ footer a{
 }
 
 
+.titre h1{
+    color: white;
+    text-align: center;
+    font-size: 2.5vw;
+    font-family: "Lekton Regular";
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+
 .barre{
     background-color: black;
-
     margin:auto;
     width: 100%;
     height: 1px;  
