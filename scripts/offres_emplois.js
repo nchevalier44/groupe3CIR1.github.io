@@ -18,7 +18,6 @@ function clock() {
     const hour = hours * 30;
     const minute = minutes * 6;
     const second = seconds * 6;
-    console.log(hour, minute, second);
 
 
     //Afficher l'heure
