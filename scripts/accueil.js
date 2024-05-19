@@ -34,6 +34,44 @@ function clock() {
 //Interval 
 setInterval(clock,1000);
 
+
+
+
+//Affichage du temps passé sur la page
+
+let j = 0;
+function countTime(){ //Calcul du temps
+    j++;
+}
+
+
+function timeSpent(){ //Affichage du temps 
+    let e = document.getElementsByClassName('TimeSpent')[0];
+    
+    e.nextElementSibling.remove();
+    let txt = document.createElement('p');
+    txt.style.justifyContent = 'center';
+    if(i<60){
+        txt.innerHTML = "Temps passé sur la page : " + j + " secondes";
+    }
+    if(i>=60){
+        let minutes = Math.floor(j/60);
+        txt.innerHTML =  "Temps passé sur la page : " + minutes + " minutes et " + i%60 + " secondes";
+    }
+    if(i>=3600){
+        let heures = Math.floor(j/3600);
+        let minutes = Math.floor((j-3600*heures)/60);
+        txt.innerHTML =  "Temps passé sur la page : " + heures + " heures et " + minutes + " minutes et " + j%60 + " secondes";
+    }
+    
+    e.after(txt);
+}
+
+setInterval(countTime,1000);
+setInterval(timeSpent,1000);
+
+
+
 //Zoom x2 sur l'image des compétences de l'équipe
 
 function zoomCompetences(){
