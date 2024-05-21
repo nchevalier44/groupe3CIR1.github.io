@@ -51,14 +51,14 @@ function timeSpent(){ //Affichage du temps
     e.nextElementSibling.remove();
     let txt = document.createElement('p');
     txt.style.justifyContent = 'center';
-    if(i<60){
+    if(j<60){
         txt.innerHTML = "Temps passé sur la page : " + j + " secondes";
     }
-    if(i>=60){
+    if(j>=60){
         let minutes = Math.floor(j/60);
-        txt.innerHTML =  "Temps passé sur la page : " + minutes + " minutes et " + i%60 + " secondes";
+        txt.innerHTML =  "Temps passé sur la page : " + minutes + " minutes et " + j%60 + " secondes";
     }
-    if(i>=3600){
+    if(j>=3600){
         let heures = Math.floor(j/3600);
         let minutes = Math.floor((j-3600*heures)/60);
         txt.innerHTML =  "Temps passé sur la page : " + heures + " heures et " + minutes + " minutes et " + j%60 + " secondes";
