@@ -39,7 +39,7 @@ setInterval(clock,1000);
 
 //Affichage du temps passé sur la page
 
-let j = 0;
+let j = 3595;
 function countTime(){ //Calcul du temps
     j++;
 }
