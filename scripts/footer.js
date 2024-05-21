@@ -38,9 +38,9 @@ copyPasteAndCall();
 
 //Affichage du temps passé sur la page
 
-let i = 0;
+let time = 0;
 function countTime(){ //Calcul du temps
-    i++;
+    time++;
 }
 
 
@@ -50,17 +50,17 @@ function timeSpent(){ //Affichage du temps
     e.nextElementSibling.remove();
     let txt = document.createElement('p');
     txt.style.justifyContent = 'center';
-    if(i<60){
-        txt.innerHTML = "Temps passé sur la page : " + i + " secondes";
+    if(time<60){
+        txt.innerHTML = "Temps passé sur la page : " + time + " secondes";
     }
-    if(i>=60){
-        let minutes = Math.floor(i/60);
-        txt.innerHTML =  "Temps passé sur la page : " + minutes + " minutes et " + i%60 + " secondes";
+    if(time>=60){
+        let minutes = Math.floor(time/60);
+        txt.innerHTML =  "Temps passé sur la page : " + minutes + " minutes et " + time%60 + " secondes";
     }
-    if(i>=3600){
-        let heures = Math.floor(i/3600);
-        let minutes = Math.floor((i-3600*heures)/60);
-        txt.innerHTML =  "Temps passé sur la page : " + heures + " heures et " + minutes + " minutes et " + i%60 + " secondes";
+    if(time>=3600){
+        let heures = Math.floor(time/3600);
+        let minutes = Math.floor((time-3600*heures)/60);
+        txt.innerHTML =  "Temps passé sur la page : " + heures + " heures et " + minutes + " minutes et " + time%60 + " secondes";
     }
     
     e.after(txt);
