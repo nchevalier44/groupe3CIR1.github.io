@@ -21,7 +21,7 @@ function copyPasteAndCall(){
 }
 
 function ringtone(){
-    let audio = new Audio("../audio/SonnerieMichael.mp3");
+    let audio = new Audio("/audio/SonnerieMichael.mp3");
     audio.play();
 }
 
