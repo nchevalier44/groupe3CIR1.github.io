@@ -13,7 +13,8 @@ function copyPasteAndCall(){
                 ringtone();
             }
             else{
-                console.log("Vous n'avez pas saisi un numéro valable, merci de réessayer")
+                console.log("Vous n'avez pas saisi un numéro valable, merci de réessayer");
+                alert("Vous n'avez pas saisi un numéro valable, merci de réessayer");
             }
         });
     }
