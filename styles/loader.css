@@ -72,4 +72,7 @@
 .fondu-out {
     opacity: 0;
     transition: opacity 1s ease-out;
+    display: none;
+    z-index:-1;
+
 }

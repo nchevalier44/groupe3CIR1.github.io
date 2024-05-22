@@ -1,3 +1,4 @@
+loading();
 
 function createLoader(){
 
@@ -76,8 +77,28 @@ function createLoader(){
     
 }
 
-const loader = document.querySelector('.loader');
+function loading(){
+    let childrend = document.body.children;
+    let n = childrend.length;
 
-window.addEventListener('load',() => {
-    loader.classList.add('fondu-out');
-});
+    for(let i = 0; i < n; i++){
+        childrend[i].style.display  = "none";
+    }
+
+    createLoader();
+
+    setTimeout(function(){
+        for(let i = 1; i < n+1; i++){
+            childrend[i].style.display = "";
+        }
+        document.querySelector(".loader").classList.add("fondu-out");
+        //childrend[0].style.display = "none";
+
+        
+    }, 3000);
+
+    
+
+}
+
+
