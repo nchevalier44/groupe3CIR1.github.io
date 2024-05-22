@@ -1,0 +1,75 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin : 0;
+    padding: 0;
+}
+
+@keyframes rotate{
+    0%{
+        transform : rotate(0);
+    }
+    100%{
+        transform : rotate(360deg);
+    }
+}
+
+@keyframes flash {
+    0% {
+        color : #FFCB9A;
+        text-shadow : 0 0 7px #FFCB9A;
+    }
+    90% {
+        color : #484848;
+        text-shadow: none;
+    }
+    100% {
+        color : #FFCB9A;
+        text-shadow : 0 0 7px #FFCB9A;
+    }
+}
+
+
+.letter:nth-child(1){
+    animation-delay: 0.1s;
+}
+
+.letter:nth-child(2){
+    animation-delay: 0.2s;
+}
+
+.letter:nth-child(3){
+    animation-delay: 0.3s;
+}
+
+.letter:nth-child(4){
+    animation-delay: 0.4s;
+}
+
+.letter:nth-child(5){
+    animation-delay: 0.5s;
+}
+
+.letter:nth-child(6){
+    animation-delay: 0.6s;
+}
+
+.letter:nth-child(7){
+    animation-delay: 0.7s;
+}
+
+.letter:nth-child(8){
+    animation-delay: 0.8s;
+}   
+
+.letter:nth-child(9){
+    animation-delay: 0.9s;
+}
+
+.letter:nth-child(10){
+    animation-delay: 1s;
+}
+
+.fondu-out {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
