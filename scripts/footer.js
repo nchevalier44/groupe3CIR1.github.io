@@ -6,7 +6,7 @@ let numberPhone = document.getElementsByClassName("numberPhone");
 function copyPasteAndCall(){
     let fenetre;
     for(let i=0;i<4;i++){
-        numberPhone[i].addEventListener(`copy`,() =>{
+        numberPhone[i].addEventListener(`copy`,() =>{       //dès qu'un numéro de téléphone est copié, la fonction anonyme s'exécute
             fenetre = prompt("Si vous voulez appeler ce numéro : " +numberPhone[i].textContent+ " entrez le de nouveau dans le champ ci-dessous puis validez ");
             if(fenetre == numberPhone[i].textContent){      
                 console.log("Vous appellez ce numéro: "+numberPhone[i].textContent);
@@ -22,19 +22,23 @@ function copyPasteAndCall(){
 }
 
 
-function ringtone(){
-    let audio = new Audio("/audio/SonnerieMichael.mp3");
-    audio.play();
-}
+function ringtone(){                                //Pour ajouter la sonnerie et la lancer
+    let audio = document.createElement("audio");
+    audio.id = "audio-id"
+    audio.src = "audio/SonnerieGoofy.mp3";
+    audio.autoplay = true;                          //Pour que le son se lance directement après avoir validé dans le prompt
+    document.body.appendChild(audio);
+    setTimeout(()=>{                        //fonction anonyme pour supprimer le son
+        let audioToRemove = document.getElementById("audio-id");
+        audioToRemove.remove();          //Pour supprimer le div audio et donc arrêter la sonnerie 
+    },6000);                            //Délai de 5s puis le son est supprimé 
 
-/*function call(){
-    if(copyPaste == numberPhone[i].textContent){
-        console.log("Vous appellez ce numéro: "+numberPhone[i].textContent);
-        let audio = new Audio("groupe3CIR1.github.io/audio/Michael ringtone GTA 5 sound effect.mp3/");
-        audio.play();
-    }
+}
     
-}*/
+
+
+
+
 
 copyPasteAndCall();
 
