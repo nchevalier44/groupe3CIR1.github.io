@@ -3,8 +3,11 @@
 function logoOnClick(){
     let logo = document.getElementById("labisen-nav");
     logo.addEventListener("click",()=>{
-        window.location = 'index.html';
+        window.location = 'index.html';             //Pour être dirigé vers l'accueil quand on clique sur logo
     });
+    logo.addEventListener("mouseenter",()=>{
+        logo.style.cursor = "pointer";              //Fonction anonyme pour changer le style du pointeur quand on passe sur le logo
+    })
 }
 
 logoOnClick();

@@ -31,7 +31,7 @@ function ringtone(){                                //Pour ajouter la sonnerie e
     setTimeout(()=>{                        //fonction anonyme pour supprimer le son
         let audioToRemove = document.getElementById("audio-id");
         audioToRemove.remove();          //Pour supprimer le div audio et donc arrêter la sonnerie 
-    },6000);                            //Délai de 5s puis le son est supprimé 
+    },6000);                            //Délai de 6s puis le son est supprimé 
 
 }
     
