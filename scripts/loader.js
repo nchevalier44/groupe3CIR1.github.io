@@ -95,7 +95,7 @@ function loading(){
         //childrend[0].style.display = "none";
 
         
-    }, 3000);
+    }, 2000);
 
     
 
