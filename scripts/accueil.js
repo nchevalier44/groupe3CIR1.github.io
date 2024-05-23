@@ -1,3 +1,6 @@
+
+
+
 //Zoom x2 sur l'image des compétences de l'équipe
 
 function zoomCompetences(){
