@@ -1,4 +1,5 @@
-//Gratter la photo Ayoub Karine
+
+
 function gratter(event){
     let posX = event.offsetX;
     let posY = event.offsetY;
@@ -28,6 +29,7 @@ context.fill();
 canvas.addEventListener("mousemove", function(event){
     gratter(event);
 });
+
 
 
 
