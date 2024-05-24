@@ -48,4 +48,20 @@ function clock() {
 setInterval(clock,1000);
 
 
+//Naviguation dans la page membres
+let membresNav = document.getElementById("membres-nav");
+
+function naviguateToMembres(){
+    membresNav.addEventListener("click",() =>{
+        let confirm = window.confirm("Aller à la page membres ?");
+        if(confirm){
+            window.location = 'membres.html';
+        }
+        else{
+            window.location ='';
+        }
+    });
+}
+
+membresNav.addEventListener("click",naviguateToMembres());
 
