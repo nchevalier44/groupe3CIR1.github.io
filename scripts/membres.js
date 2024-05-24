@@ -245,6 +245,8 @@ function updateOptionsPeople(){
 
 function createAddMenu(){
     let container = document.getElementById("menu-container");
+    container.style.overflowY = "auto";
+    container.style.height = "80%";
     let add_container = document.createElement("div");
     add_container.id = "add-menu-container";
     let add_form = document.createElement("form");
