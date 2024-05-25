@@ -21,6 +21,10 @@ function arrowDown(){
     arrow.addEventListener("click", () =>{
         topPage.scrollIntoView({ behavior: 'smooth'});  //scrollIntoView permet de scroll automatiquement dans la page vers l'élément topPage
     });
+
+    arrow.addEventListener("mouseenter",()=>{
+        arrow.style.cursor = "pointer";              //Fonction anonyme pour changer le style du pointeur quand on passe la souris sur la flèche
+    })
 }
 
 
