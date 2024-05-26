@@ -171,10 +171,19 @@ body{
     border-radius: 1rem;
 
     width: 22%;
+    max-width: 400px;
+    box-sizing: border-box;
     
 }
 
 .txtFilter{
     margin-top: 5%;
+    
 }
 
+.filterIn{
+    width: 80%;
+    height: 10%;
+    padding: 10px;
+    box-sizing: border-box;
+}
