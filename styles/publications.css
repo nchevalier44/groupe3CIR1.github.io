@@ -11,12 +11,10 @@
     font-weight: normal;
     src: url('../font/Lohit-Devanagari.ttf') format('truetype');
 }
-
 * {
     padding: 0;
     margin: 0;
-}
-      
+}   
 body{
     font-family: "Lekton Regular";
     background-color: #D1E8E2;
@@ -145,4 +143,47 @@ body{
 
 #picture-main{
     width: 100%;
+}
+
+/*Filtres */   
+
+#content-filter{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    width : 80% ;
+    margin : auto;
+    
+
+}
+
+.filter{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+
+    background-color: #116466;
+    color :#D1E8E2;
+      
+    border-radius: 1rem;
+
+    width: 22%;
+    max-width: 400px;
+    box-sizing: border-box;
+    
+}
+
+.txtFilter{
+    margin-top: 5%;
+    
+}
+
+.filterIn{
+    width: 80%;
+    height: 10%;
+    padding: 10px;
+    box-sizing: border-box;
 }
