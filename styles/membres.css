@@ -32,8 +32,10 @@ body{
 
 .cards{
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 1vw;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .titre{
