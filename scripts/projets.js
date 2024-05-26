@@ -1,5 +1,6 @@
 
 function arrowDown(){
+
     let divArrow = document.createElement("div");       //div pour contenir la flèche en bas de page
     let arrow = document.createElement("img");
     arrow.src = "images/icones/arrow_up.svg";
@@ -29,3 +30,44 @@ function arrowDown(){
 
 
 arrowDown();
+
+
+//IMAGES PROJETS
+
+function switchImage(){
+
+    let img1 = document.getElementById("img-projet1");  
+    let img2 = document.getElementById("img-projet2"); 
+    let img3 = document.getElementById("img-projet3"); 
+
+    img1.addEventListener("click",() =>{
+        if(img1.src.endsWith("images/logos/castel.png")){       //on utilise la méthode endsWith qui renvoie true si ici la source de l'image est bien celle de l'image originale
+            img1.src = "images/img-projet1-switch.jpg";         //si oui alors on la modifie en changeant la source
+        }
+        else{
+            img1.src = "images/logos/castel.png";               //sinon on garde/remet l'image originale
+        }
+    });
+
+    img2.addEventListener("click",() =>{
+        if(img2.src.endsWith("images/img-projet2.jpg")){
+            img2.src = "images/img-projet2-switch.jpg";
+        }
+        else{
+            img2.src = "images/img-projet2.jpg";
+        }
+    });
+
+    img3.addEventListener("click",() =>{
+        if(img3.src.endsWith("images/img-projet3.jpg")){
+            img3.src = "images/img-projet3-switch.jpg";
+        }
+        else{
+            img3.src = "images/img-projet3.jpg";
+        }
+    });
+
+
+}
+
+switchImage();
