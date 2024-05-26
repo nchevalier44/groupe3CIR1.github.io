@@ -99,58 +99,106 @@
         <br>
         <div class="barre"></div>
         <br>
+        <div id="content-filter">
+            <div class="filter" id="byUserName">
+                <div class="txtFilter">Filtrer par Nom :</div>
+                <input type="text" id="search-input1" placeholder="Rechercher..." oninput="filter('search-input1')">
+            </div>
+
+            <div class="filter" id="byTitle">
+                <div class="txtFilter">Filtrer par Titre :</div>
+                <input type="text" id="search-input2" placeholder="Rechercher..." oninput="filter('search-input2')">
+            </div>
+
+            <div class="filter" id="byYear">
+                <div class="txtFilter">Filtrer par Année :</div>
+                <input type="text" id="search-input3" placeholder="Rechercher..." oninput="filter('search-input3')">
+            </div>
+
+            <div class="filter" id="byType">
+                <div class="txtFilter2">Filtrer par Type :</div>
+
+                <div>
+                    <input type="radio" id="all" name="type" value="all" checked  oninput="filter('all')">
+                    <label for="all">Tous</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="article" name="type" value="article"  oninput="filter('article')">
+                    <label for="article">Article</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="communications" name="type" value="communication"  oninput="filter('communications')">
+                    <label for="communications">Communications</label>
+                </div>
+    
+            </div>
+
+        </div>
+        <br>
+        <div class="barre"></div>
+        <br>
         
+        <span id="communcations-field">
         <div class="title-box1">
             <h2 class="title2">Communication dans un congrès</h2>
         </div>
-        <br>
-
-        <div class="publications">
-            <div class="square_blue"></div>
-            <div class="publications_txt">
-                <p class="content_pub"><span class="blue_txt"><b>Salima Bourbia , Ayoub Karine , Aladine Chetouani , Mohammed El Hassouni , Maher Jridi.</span> Deep Learning Multi-View Fusion for Blind 3D Point Cloud Quality Assessment</b>. <i>Affinity Workshop NAML (North Africans in Machine Learning Workshop) of NeurIPS 2023, Dec 2023, New Orleans, United States</i></p> 
-        
-            </div>
-        </div>
-
-        <div class="publications">
-            <div class="square_blue"></div>
-            <div class="publications_txt">
-                <p class="content_pub"><span class="blue_txt"><b>Salima Bourbia , Ayoub Karine , Aladine Chetouani , Mohammed El Hassouni , Maher Jridi.</span> Multi-stream POINTNet-based Model For Blind Geometric Point Cloud Quality Assessment.</b> <i> 20th International Conference on Content-based Multimedia Indexing, Sep 2023, Orléans, France</i></p> 
-        
-            </div>
-        </div>
-
-        <div class="publications">
-            <div class="square_blue"></div>
-            <div class="publications_txt">
-                <p class="content_pub"><span class="blue_txt"><b>Salima Bourbia , Ayoub Karine , Aladine Chetouani , Mohammed El Hassouni , Maher Jridi.</span> Évaluation de la qualité de nuages de points 3D sans référence en utilisant un transformer et la saillance visuelle.</b>. <i>Colloque Francophone de Traitement du Signal et des Images (GRETSI) 2023, Aug 2023, Grenoble, France</i></p> 
-            </div>
-        </div>
         
         <br>
 
+        <div class="publications">
+            <div class="square_blue"></div>
+            <div class="publications_txt">
+                <p class="content_pub"><span class="blue_txt"><b>Salima Bourbia , Ayoub Karine , Aladine Chetouani , Mohammed El Hassouni , Maher Jridi.</span> <span class="title">Deep Learning Multi-View Fusion for Blind 3D Point Cloud Quality Assessment. </span></b> <i>Affinity Workshop NAML (North Africans in Machine Learning Workshop) of NeurIPS 2023, Dec <span class="year">2023</span>, New Orleans, United States</i></p> 
+        
+            </div>
+        </div>
+
+        <div class="publications">
+            <div class="square_blue"></div>
+            <div class="publications_txt">
+                <p class="content_pub"><span class="blue_txt"><b>Salima Bourbia , Ayoub Karine , Aladine Chetouani , Mohammed El Hassouni , Maher Jridi.</span><span class="title"> Multi-stream POINTNet-based Model For Blind Geometric Point Cloud Quality Assessment.</span></b> <i> 20th International Conference on Content-based Multimedia Indexing, Sep <span class="year">2023</span>, Orléans, France</i></p> 
+        
+            </div>
+        </div>
+
+        <div class="publications">
+            <div class="square_blue"></div>
+            <div class="publications_txt">
+                <p class="content_pub"><span class="blue_txt"><b>Salima Bourbia , Ayoub Karine , Aladine Chetouani , Mohammed El Hassouni , Maher Jridi.</span><span class="title"> Évaluation de la qualité de nuages de points 3D sans référence en utilisant un transformer et la saillance visuelle.</span></b>. <i>Colloque Francophone de Traitement du Signal et des Images (GRETSI) 2023, Aug <span class="year">2023</span>, Grenoble, France</i></p> 
+            </div>
+        </div>
+        
+        <br>
+        
+        </span>
+
+        
         <div class="barre"></div>
         <br>
+
+        <span id="articles-field">
+
+        
         <div class="title-box2">
             <h2 class="title2">Articles dans une revue</h2>
         </div>
-
         <br> 
         <div class="publications">
             <div class="square_yellow"></div>
             <div class="publications_txt">
-                <p class="content_pub"><span class="blue_txt"><b>Sameh Samir , Taheni Damak , Matthieu Saumard , Mohamed Ali Ben Ayed , Maher Jridi , et al: </span>Performance analysis of MTS on the VVC encoder. </b> <i>Performance analysis of MTS on the VVC encoder. </i></p> 
+                <p class="content_pub"><span class="blue_txt"><b>Sameh Samir , Taheni Damak , Matthieu Saumard , Mohamed Ali Ben Ayed , Maher Jridi , et al: </span><span class="title">Performance analysis of MTS on the VVC encoder. </span></b> <i>Performance analysis of MTS on the VVC encoder, <span class="year">2020</span> </i></p> 
             </div>
         </div>
 
         <div class="publications">
             <div class="square_yellow"></div>
             <div class="publications_txt">
-                <p class="content_pub"><span class="blue_txt"><b>Mélissa Hanafi-Portier , Sarah Samadi , Laure Corbari , Marion Boulard , Elda Miramontes , et al: </span>Multiscale spatial patterns and environmental drivers of seamount and island slope megafaunal assemblages along the Mozambique channel. </b> <i>Deep Sea Research Part I: Oceanographic Research Papers, 2023 </i></p> 
+                <p class="content_pub"><span class="blue_txt"><b>Mélissa Hanafi-Portier , Sarah Samadi , Laure Corbari , Marion Boulard , Elda Miramontes , et al: </span><span class="title">Multiscale spatial patterns and environmental drivers of seamount and island slope megafaunal assemblages along the Mozambique channel.</span> </b> <i>Deep Sea Research Part I: Oceanographic Research Papers, <span class="year" >2023</span></i></p> 
             </div>
         </div>
-
+        </span>
         <br>
         <div class="barre"></div>
         <br><br>
