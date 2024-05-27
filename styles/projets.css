@@ -85,9 +85,38 @@ body{
     color: black;
     font-size: 1.5vw;
     margin:3%;
-   
     text-align: justify;
 }
 .sous-titre{
     color: #116466;
+}
+
+#img-projet1{
+    width: 85%;
+    height : 75%;
+}
+
+#img-projet2{
+    width: 40%;
+    height: 30%;
+}
+
+#img-projet3{
+    width : 95%;
+    height: 60%;
+}
+
+.projet1,.projet3{
+   display: flex;
+   align-items: flex-start;
+   gap: 10px;
+}
+
+.img-container{
+    flex: 0 0 auto;
+    margin: auto;
+}
+
+.text-container {
+    flex: 1 1 auto; 
 }

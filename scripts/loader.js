@@ -7,6 +7,7 @@ function createLoader(){
 
     //Creation du fond de chargement
     let div2 = document.createElement("div");
+    
     body.insertBefore(div2, body.firstChild);
     div2.setAttribute("class", "loader");
     div2.style.height = "100%";
@@ -37,22 +38,15 @@ function createLoader(){
     //LETTRES CHARGEMENT
     
     let divLetter = div2.appendChild(document.createElement("div"));
-    divLetter.setAttribute("class", "letter");
+    divLetter.setAttribute("class", "letters");
     let c = ['C', 'H', 'A', 'R', 'G', 'E', 'M', 'E', 'N', 'T'];
     let count = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1];
     for(let i = 0; i < 10 ; i++) {
         let letter = divLetter.appendChild(document.createElement("span"));
         letter.innerHTML = c[i];
         letter.setAttribute("class", "letter");
-        letter.style.color = "#FFCB9A";
-        letter.style.fontSize = "100px";
-        letter.style.top = "50px";
-        letter.style.left = "0";
-        letter.style.height = "100px";
-        letter.style.width = "100px";
-        letter.style.animation = "flash 1.2s linear infinite";
         
-        /*letter.style.animationDelay = `${count[i]}`;*/
+        
     }
     divLetter.style.marginTop ="50px";
     divLetter.style.letterSpacing ="10px"
@@ -77,7 +71,7 @@ function createLoader(){
     
 }
 
-function loading(){
+function loading(){ //hide the whole page during the animation then hide the animation to display the content
     let childrend = document.body.children;
     let n = childrend.length;
 
@@ -92,10 +86,10 @@ function loading(){
             childrend[i].style.display = "";
         }
         document.querySelector(".loader").classList.add("fondu-out");
-        //childrend[0].style.display = "none";
-
+        setTimeout(function(){
+            childrend[0].style.display = "none";},1000);
         
-    }, 2000);
+    }, 2500);
 
     
 
