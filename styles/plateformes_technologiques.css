@@ -74,6 +74,10 @@ body{
     padding: 20px;
 }
 
+#img_livinglab{
+    width: 50%;
+}
+
 
 .texte-living_lab{
     
@@ -88,9 +92,6 @@ img{
     max-width: 100%;
     align-self: auto;
     align-items: center;
-    
-   
-
 }
 
 #environnement{
