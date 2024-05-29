@@ -55,13 +55,13 @@ function naviguateToMembres(){
     membresNav.addEventListener("click",() =>{
         let confirm = window.confirm("Aller à la page membres ?");
         if(confirm){
+            console.log("test");
             window.location = 'membres.html';
         }
-        else{
-            window.location ='';
-        }
+        console.log(window.location);
+       
     });
 }
 
-membresNav.addEventListener("click",naviguateToMembres());
+naviguateToMembres();
 
