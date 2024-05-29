@@ -109,10 +109,10 @@
                  -->
 
                     <ul>
-                        <li><input type="text" name="nom" value="Nom et prénom" class="txtarea"/></li>
-                        <li><input type="" name="email" value="Email" class="txtarea"/></li>
-                        <li><textarea name="message" class="txtarea" >Votre message</textarea></li>
-                        <li><button type="submit">Envoyer</button></li>
+                        <li><input type="text" id="Name" name="nom" class="txtarea" placeholder="Prénom Nom" oninput="check()"/></li>
+                        <li><input type="email" id="email" name="email" placeholder="email@example.com" class="txtarea" oninput="check()"/></li>
+                        <li><textarea name="message" class="txtarea" placeholder="Votre message (1000 caractère maximum)" oninput="check()"></textarea></li>
+                        <li><button type="submit" id="sendButton">Envoyer</button></li>
                     </ul>
                 </form>
             </div>

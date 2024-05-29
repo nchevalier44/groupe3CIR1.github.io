@@ -63,5 +63,26 @@ function naviguateToMembres(){
     });
 }
 
-membresNav.addEventListener("click",naviguateToMembres());
+// membresNav.addEventListener("click",naviguateToMembres());
+
+
+//Génère un message dans la console lorsque l'utilisateur essaye de copier un élement de la page
+document.body.setAttribute("oncopy", "logCopy()");
+
+function logCopy() {
+    console.log("Be aware when you are copying thing that dont belongs to you !");
+}
+
+//Change le fond d'un boutton de la nav-barre lorsqu'il est pressé
+
+let itemNav = document.getElementsByClassName("item-nav");
+
+for(let i = 0; i<itemNav.length; i++){
+    itemNav[i].addEventListener("click",()=>{
+        itemNav[i].style.backgroundColor = "rgb(255, 255, 255)";
+        itemNav[i].style.color = "rgb(0, 0, 0)";
+    });
+}
+
+
 

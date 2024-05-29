@@ -89,6 +89,3 @@ let interval = setInterval(animationQuiSommesNous, 1000);
 
 
 
-function logCopy() {
-    console.log("You copied something u nasty !");
-  }

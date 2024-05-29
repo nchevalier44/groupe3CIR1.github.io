@@ -63,7 +63,7 @@ function filter(id){
         }
         j++; 
     }
-
+    
     let commSpan = document.getElementById("communcations-field"); //On récupère la partie Communications
     let artSpan = document.getElementById("articles-field");    //Idem pour articles
 
