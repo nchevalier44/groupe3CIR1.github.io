@@ -68,7 +68,7 @@ function naviguateToMembres(){
     
 }
 
-// membresNav.addEventListener("click",naviguateToMembres());
+naviguateToMembres();
 
 
 //Génère un message dans la console lorsque l'utilisateur essaye de copier un élement de la page
