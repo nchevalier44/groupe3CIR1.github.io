@@ -49,18 +49,23 @@ setInterval(clock,1000);
 
 
 //Naviguation dans la page membres
-let membresNav = document.getElementById("membres-nav");
 
 function naviguateToMembres(){
-    membresNav.addEventListener("click",() =>{
-        let confirm = window.confirm("Aller à la page membres ?");
-        if(confirm){
-            window.location = 'membres.html';
-        }
-        else{
-            window.location ='';
-        }
-    });
+    try{
+        let membresNav = document.getElementById("membres-nav");
+        membresNav.addEventListener("click",() =>{
+            let confirm = window.confirm("Aller à la page membres ?");
+            if(confirm){
+                window.location = 'membres.html';
+            }
+            else{
+                window.location ='';
+            }
+        });
+    } catch(error){
+        //do nothing
+    }
+    
 }
 
 // membresNav.addEventListener("click",naviguateToMembres());

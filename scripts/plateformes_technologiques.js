@@ -1,13 +1,31 @@
 
-let modalContainer = document.querySelector(".modal-container");
-let modalTriggers = document.querySelector(".modal-trigger");
+
+function createModalWindow(){
+    //on crée le conteneur de la fenetre modale 
+
+    let modalContainer = document.createElement("div");
+    let imgModal1 = document.getElementById("img_livinglab");
+    let imgModal2 = "images/imgPlateforme"
+    let modalTitle = document.getElementById("sous-titre");
+    let modalText1 = document.getElementsByClassName("texte-living-lab")[0];
+    let modalText2 = document.getElementsByClassName("texte-environnement")[0];
+
+    modalContainer.appendChild(imgModal);
+    
+    modalContainer.innerHTML
+    
+    modalContainer.id = "modal-container";
 
 
-function modalTrigger(){
-    modalTriggers.forEach(trigger => trigger.addEventListener("click",toggleModal)); //addEventListener permet d'appliquer la fonction toggleModal à chaque clic de l'utilisateur
+
+    modalContainer.style.display = "none";
+
+    
 }
 
-function toggleModal(){
-    modalContainer.classList.toggle("active");   //gérér l'ajout ou la suppression d'une classe active(qui va rendre notre page ouverte ou fermée)
-}
+function OpenModalWindow(){
+    let title = document.getElementById("sous-titre");  //les titres sur lequels il faut cliquer pour ouvrir la modale 
+    title.addEventListener("click", () =>{
 
+    });
+}
