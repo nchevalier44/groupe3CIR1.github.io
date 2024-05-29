@@ -40,7 +40,7 @@ let is_adding = true;
 let button = document.createElement("button");
 document.body.appendChild(button);
 button.style.position = "absolute";
-button.style.top = "6vw";
+button.style.top = "10vw";
 button.style.right = "4vw";
 button.style.width = "6vw";
 button.style.height = "2vw";
@@ -154,7 +154,7 @@ function createMenu(){
     container.style.padding = "0.5vw";
     container.style.borderRadius = "1vw";
     container.style.right = "2vw";
-    container.style.top = "10vw";
+    container.style.top = "8vw";
     container.style.fontSize = "80%";
     container.style.width = "22.5%";
     document.body.appendChild(container);

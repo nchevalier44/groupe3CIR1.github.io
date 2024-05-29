@@ -49,19 +49,18 @@ setInterval(clock,1000);
 
 
 //Naviguation dans la page membres
-let membresNav = document.getElementById("membres-nav");
 
 function naviguateToMembres(){
     membresNav.addEventListener("click",() =>{
         let confirm = window.confirm("Aller à la page membres ?");
         if(confirm){
-            console.log("test");
             window.location = 'membres.html';
         }
-        console.log(window.location);
-       
+        else{
+            window.location ='';
+        }
     });
 }
 
-naviguateToMembres();
+membresNav.addEventListener("click",naviguateToMembres());
 
