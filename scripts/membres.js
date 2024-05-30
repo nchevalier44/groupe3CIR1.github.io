@@ -1,46 +1,63 @@
+//Définition d'une variable globale pour pouvoir la modifier et l'utiliser dans les deux fonctions
+let context;
 
 
 function gratter(event){
+    //Récupération des coordonnées de la souris sur la page
     let posX = event.offsetX;
     let posY = event.offsetY;
     context.save();
     context.beginPath();
     let radius = 10;
+    //Crée un cercle sur les coordonnées de la souris
     context.arc(posX, posY, radius, 0, 2*Math.PI);
     context.clip();
+    //Supprime le contenu du cercle
     context.clearRect(posX - radius, posY - radius, 2 * radius, 2 * radius);
     context.restore();
 }
 
+function initCanvas(){
+    //Création du canvas
+    let img = document.getElementById("AyoubKarine");
+    let canvas = document.createElement("canvas");
+    canvas.width = img.width+2;
+    canvas.height = img.height+2;
+    canvas.style.position = "absolute";
+    img.parentElement.insertBefore(canvas, img);
+    context = canvas.getContext("2d");
+    context.fillStyle = "#CCCCCC";
+    //Dessine le cercle au dessus de l'image
+    context.beginPath();
+    context.arc(canvas.width/2, canvas.height/2, 0.5*canvas.width, 0, Math.PI*2);
+    context.closePath();
+    context.fill();
+    
+    canvas.addEventListener("mousemove", function(event){
+        gratter(event);
+    });
+}
 
-let img = document.getElementById("AyoubKarine");
-let canvas = document.createElement("canvas");
-canvas.width = img.width+2;
-canvas.height = img.height+2;
-canvas.style.position = "absolute";
-img.parentElement.insertBefore(canvas, img);
-let context = canvas.getContext("2d");
-context.fillStyle = "#CCCCCC";
-context.beginPath();
-context.arc(canvas.width/2, canvas.height/2, 0.5*canvas.width, 0, Math.PI*2);
-context.closePath();
-context.fill();
-
-canvas.addEventListener("mousemove", function(event){
-    gratter(event);
-});
+initCanvas();
 
 
 
 
-//Mode édition
+//////////////////////////////////////////////////////Mode édition//////////////////////////////////////////////////////
 
-let is_editing = false;
-let is_adding = true;
+//Définition de variable globale et 
+let is_editing = false; //Mode lecteur ou mode éditeur
+let is_adding = true; //Ajouter ou modifier un membre (dans le menu)
+let tab_tags = ["Image processing", "Remote sensing", "Machine learning", "Deep learning", "Computer vision", "IoT", "IoMT", "Industrial IoT", "Digital VLSI design", "High Performance Embedded Computing", "Algorithm-Architecture Co-design", "3D Computer vision", "3D Quality assessment"];
+
+//Stocke la carte d'Ayoub Karine comme exemple pour pouvoir la cloner et l'utiliser pour en créer d'autre plus tard
+let card_storage = document.getElementById("card-Ayoub-Karine").cloneNode(true); 
+
+//Création entière du boutton pour passer en mode édition
 let button = document.createElement("button");
 document.body.appendChild(button);
 button.style.position = "absolute";
-button.style.top = "10vw";
+button.style.top = "10vw"; //Positionnement en haut à droite de l'écran
 button.style.right = "4vw";
 button.style.width = "6vw";
 button.style.height = "2vw";
@@ -52,11 +69,10 @@ button.style.fontSize = "0.8vw";
 button.style.backgroundColor = "#116466";
 button.style.color = "white";
 
-let tab_tags = ["Image processing", "Remote sensing", "Machine learning", "Deep learning", "Computer vision", "IoT", "IoMT", "Industrial IoT", "Digital VLSI design", "High Performance Embedded Computing", "Algorithm-Architecture Co-design", "3D Computer vision", "3D Quality assessment"];
-let card_storage = document.getElementById("card-Ayoub-Karine").cloneNode(true);
 
 button.addEventListener("click", () => {
     if(!is_editing){
+        //Si l'utilisateur est en mode lecteur : on lui demande l'identifiant et le mot de passe puis on le passe en mode édition
         let id_admin = window.prompt("Identifiant du profil administrateur :");
         if(id_admin == "admin"){
             let pwd_admin = window.prompt("Mot de passe du profil administrateur :");
@@ -66,6 +82,7 @@ button.addEventListener("click", () => {
             }
         }
     } else{
+        //On demande une confirmation avant de quitter le mode édition
         let confirmation = window.confirm("Voulez-vous vraiment quitter le mode édition ?");
         if(confirmation){
             is_editing = false;
@@ -75,8 +92,8 @@ button.addEventListener("click", () => {
 });
 
 function changeState(){
-    changeButton();
-    changeDeleteIcons();
+    changeButton(); //Change le bouton en fonction du mode édition ou lecteur
+    changeDeleteIcons(); //Ajoute ou enleve les icones pour supprimer les cartes 
     if(is_editing){
         createMenu();
     } else{
@@ -95,41 +112,43 @@ function changeButton(){
     }
 }
 
-
 function changeDeleteIcons(){
     let cards = document.getElementsByClassName("card");
     let n = cards.length;
     for(let i = 0; i<n; i++){
         if(is_editing){
-            addDeleteIcon(cards[i]);
+            addDeleteIcon(cards[i]); //Ajoute les icones si on est en mode édition sur chaque carte
         } else{
-            cards[i].firstElementChild.lastElementChild.remove();
+            cards[i].firstElementChild.lastElementChild.remove(); //Supprime les icones si on est à présent en mode lecteur 
         }
     }
 }
 
 function addDeleteIcon(card){
+    //Création de l'icone
     let deleteIcon = document.createElement("img");
-    deleteIcon.src = "images/icones/delete.png";
-    let name = getNameFromCard(card);            
-    deleteIcon.alt = name;
+    deleteIcon.src = "images/icones/delete.png";     
+    deleteIcon.alt = "Delete Icon";
     deleteIcon.style.position = "absolute";
     deleteIcon.style.width = "1.5vw";
     card.firstElementChild.appendChild(deleteIcon);
+    //Positionne l'icone en haut à droite de la carte
     deleteIcon.style.top = card.offsetTop + "px";
     deleteIcon.style.left = card.offsetLeft + card.clientWidth * 0.94 + "px";
 
     deleteIcon.addEventListener("click", () => {
+        //Quand on clique sur l'icone on demande une confirmation
         let confirmation = window.confirm("Etes-vous sur de vouloir supprimer cette carte ?");
         if(confirmation){
-            deleteIcon.parentElement.parentElement.remove();
-            updateAllDeleteIcon();
-            updateOptionsPeople();
+            deleteIcon.parentElement.parentElement.remove(); //On supprime la carte
+            updateAllDeleteIcon(); //On met à jour l'emplacement des icones car quand une carte est supprimée, il est possible que d'autres cartes bougent pour se recentrer
+            updateOptionsPeople(); //On met à jour la liste des cartes disponibles dans le menu de sélection
         }
     });
 }
 
 function updateAllDeleteIcon(){
+    //Replace l'image au bon endroit
     let cards = document.getElementsByClassName("card");
     let n = cards.length;
     for(let i = 0; i<n; i++){
@@ -144,7 +163,7 @@ function deleteMenu(){
 }
 
 function createMenu(){
-    //create the div menu
+    //Création du div contenant le menu
     let container = document.createElement("div");
     container.id = "menu-container";
     container.style.position = "fixed";
@@ -159,23 +178,23 @@ function createMenu(){
     container.style.width = "22.5%";
     document.body.appendChild(container);
 
-    //create the title
+    //Création du titre
     let title = document.createElement("h2");
     title.innerText = "Ajouter/Editer";
     title.style.textAlign = "center";
     container.appendChild(title);
 
-    //add a line to separate
+    //Ajouts d'une ligne 
     let hr = document.createElement("hr");
     container.appendChild(hr);
     hr.style.marginTop = "3%";
     hr.style.marginBottom = "3%";
 
-    //create a form to choose if you add or edit a member
+    //Création d'un formulaire pour choisir si on modifie ou ajoute un membre
     let choose_action_form = document.createElement("form");
     choose_action_form.id = "choose-action-form";
 
-    //create 
+    //Création des éléments du formulaire
     let select_action = document.createElement("select");
     select_action.name = "select_action";
     let label_action = document.createElement("label");
@@ -184,6 +203,7 @@ function createMenu(){
     let option_add = new Option("Ajouter", "add", true);
     let option_edit = new Option("Modifier", "edit");
 
+    //Choisir quel membre on modifie
     let select_people = document.createElement("select");
     select_people.name = "select_people";
     select_people.style.display = "none";
@@ -194,7 +214,7 @@ function createMenu(){
     
     let br = document.createElement("br");
     
-    //append all created tags to the menu
+    //On ajoute toutes les balises créé dans l'arborescence
     select_action.appendChild(option_add);
     select_action.appendChild(option_edit);
     choose_action_form.appendChild(label_action);
@@ -204,10 +224,19 @@ function createMenu(){
     choose_action_form.appendChild(select_people);
     container.appendChild(choose_action_form);
 
-    updateOptionsPeople();
+    updateOptionsPeople(); //Ajoute tous les membres dans le select
 
     container.appendChild(hr.cloneNode());
+
     select_action.addEventListener("change", () => {
+        /*
+        Fonction fléchée pour pouvoir utiliser les variables définis au-dessus
+        Dès qu'il y a un changement dans la sélection de l'action, on adapte le menu en conséquence :
+         - On ajoute ou supprime la sélection des membres
+         - On change le texte du bouton d'envoie
+         - On pré-remplis les informations du membres par défaut (si on modifie)
+         - On supprime les informations présent dans les input (si on ajoute)
+        */
         if(select_action.value == "edit"){
             is_adding = false;
             label_people.style.display = "block";
@@ -218,7 +247,6 @@ function createMenu(){
             }
             
         } else{
-            
             is_adding = true;
             label_people.style.display = "none";
             select_people.style.display = "none";
@@ -235,15 +263,14 @@ function createMenu(){
 function updateOptionsPeople(){
     let cards = document.getElementsByClassName("card");
     let select_people = document.getElementById("choose-action-form").elements.select_people;
-    select_people.replaceChildren();
+    select_people.replaceChildren(); //Supprime toutes les options
     let n = cards.length;
     for(let i = 0; i<n; i++){
+        //Ajoute tous les membres en option du select
         let option = new Option(getNameFromCard(cards[i]), cards[i].id.substring(5, cards[i].id.length));
         select_people.appendChild(option);
     }
 }
-
-
 
 function createAddMenu(){
     let container = document.getElementById("menu-container");
@@ -408,8 +435,8 @@ function SubmitButton(){
         }
         
     }
-    updateAllDeleteIcon();
-    updateOptionsPeople();
+    updateAllDeleteIcon(); //Met à jour la place des icones (certaines peuvent être changé quand on en ajoute)
+    updateOptionsPeople(); //Met à jour la liste des membres
     setInformationsMenu("card-" + document.getElementById("choose-action-form").elements.select_people.value);
 
     
@@ -476,6 +503,7 @@ function editMember(card){
 }
 
 function addMember(){
+    //Si le membre existe, on ne l'ajoute pas une deuxième fois
     let b = checkIfMemberExist();
     if(b){
         return;
@@ -488,14 +516,16 @@ function addMember(){
 }
 
 function checkIfMemberExist(){
+    //Renvoie true ou false si le membre existe
     let infos = getInformationsFromMenu();
     let cards = document.getElementsByClassName("card");
     let all_names = [];
     for(let i = 0; i<cards.length; i++){
-        let nom = cards[i].id.replaceAll("-", " ").substring(5, cards[i].id.length);
+        let nom = cards[i].id.replaceAll("-", " ").substring(5, cards[i].id.length); // "card-Ayoub-Karine" --> "Ayoub Karine"
         if(is_adding){
             all_names.push(nom);
         } else{
+            //On inclue pas dans la liste le nom de la personne qu'on modifie
             if(infos.get("name") != nom){
                 all_names.push(nom);
             }
@@ -510,22 +540,27 @@ function checkIfMemberExist(){
 }
 
 function getNameFromCard(card){
-    return card.id.replaceAll("-", " ").substring(5, card.id.length);
+    //Récupère le nom de la carte
+    return card.id.replaceAll("-", " ").substring(5, card.id.length); //"card-Ayoub-Karine" --> "Ayoub Karine"
 }
 
 function getJobFromCard(card){
+    //Récupère le métier de la carte
     return card.parentElement.parentElement.className;
 }
 
 function getImageFromCard(card){
+    //Récupère l'image de la carte
     return card.getElementsByClassName("photo")[0].src;
 }
 
 function getDescriptionFromCard(card){
+    //Récupère la description de la carte
     return card.getElementsByClassName("infos")[0].innerText;
 }
 
 function getLinksFromCard(card){
+    //Récupère les liens de la carte
     let liste_liens = card.getElementsByClassName("reseaux")[0];
     if(liste_liens == undefined){
         return new Map();
@@ -534,12 +569,13 @@ function getLinksFromCard(card){
     let dico = new Map();
     let n = li.length;
     for(let i = 0; i<n; i++){
-        dico.set(li[i].firstElementChild.firstElementChild.alt.toLowerCase().replaceAll(" ", "-"), li[i].firstElementChild.href);
+        dico.set(li[i].firstElementChild.firstElementChild.alt.toLowerCase().replaceAll(" ", "-"), li[i].firstElementChild.href); //"Google Scholar" --> "google-scholar"
     }
     return dico;
 }
 
 function getTagsFromCard(card){
+    //Récupère les tags de la carte
     let keywords = card.getElementsByClassName("keywords")[0];
     if(keywords == undefined){
         return [];
@@ -548,12 +584,13 @@ function getTagsFromCard(card){
     let tab = [];
     let n = children.length;
     for(let i = 0; i<n; i++){
-        tab.push(children[i].textContent.toLowerCase().replaceAll(" ", "-"));
+        tab.push(children[i].textContent.toLowerCase().replaceAll(" ", "-")); //"Remote sensing" --> "remote-sensing"
     }
     return tab;
 }
 
 function getInformationsCard(card){
+    //Renvoie un dictionnaire remplis de toutes les infos de la carte
     let dico = new Map();
     dico.set("name", getNameFromCard(card));
     dico.set("job", getJobFromCard(card));
@@ -565,6 +602,7 @@ function getInformationsCard(card){
 }
 
 function getInformationsFromMenu(){
+    //Renvoie un dictionnnaire contenant toutes les informations saisies dans le menu
     let form = document.getElementById("add-menu-container").firstElementChild;
     let infos = new Map();
     infos.set("name", form.elements.name.value);
@@ -572,39 +610,41 @@ function getInformationsFromMenu(){
     infos.set("image-file", form.elements.image.files[0]);
     infos.set("description", form.elements.description.value);
 
-    let links = new Map(); //links
+    let links = new Map();
     let name_links = ["linkedin", "researchgate", "website", "google-scholar"];
     name_links.forEach((element) => {
-        if(form.elements[element+"-checkbox"].checked){
+        if(form.elements[element+"-checkbox"].checked){ //On ajoute le lien seulement s'il est coché
             links.set(element, form.elements[element+"-link"].value);
         };
     }); 
 
-    let tags = []; //tags
+    let tags = [];
     let n = tab_tags.length;
     for(let i = 0; i<n; i++){
-        let nom = tab_tags[i].replaceAll(" ", "-").toLowerCase() + "-checkbox";
-        if(form.elements[nom].checked){
+        let nom = tab_tags[i].replaceAll(" ", "-").toLowerCase() + "-checkbox"; // "Remote sensing" --> "remote-sensing-checkbox"
+        if(form.elements[nom].checked){ //On ajoute le tag seulement s'il est coché
             tags.push(tab_tags[i]);
         }
     }
     infos.set("links", links);
     infos.set("tags", tags);
 
-    //get card
     let form_people = document.getElementById("choose-action-form");
-    infos.set("card", document.getElementById("card-"+form_people.elements.select_people.value));
+    infos.set("card", document.getElementById("card-"+form_people.elements.select_people.value)); //On ajoute l'id de la carte
     return infos;
 }
 
 function setInformationsMenu(name_card){
+    //Met les informations d'une carte dans le menu
     resetInformationsMenu();
     let informations = getInformationsCard(document.getElementById(name_card));
     let form = document.getElementById("add-menu-container").firstElementChild;
-    form.elements.select_job.value = informations.get("job"); //Job
-    form.elements.name.value = informations.get("name"); //Name
-    form.elements.description.value = informations.get("description"); //Description
-    let links = informations.get("links"); //links
+
+    form.elements.select_job.value = informations.get("job");
+    form.elements.name.value = informations.get("name");
+    form.elements.description.value = informations.get("description");
+
+    let links = informations.get("links");
     let name_links = ["linkedin", "researchgate", "website", "google-scholar"];
     name_links.forEach((element) => {
         let l = links.get(element);
@@ -614,7 +654,8 @@ function setInformationsMenu(name_card){
             form.elements[element+"-link"].style.display = "inline";
         }
     }); 
-    let tags = informations.get("tags"); //tags
+
+    let tags = informations.get("tags");
     let n = tags.length;
     for(let i = 0; i<n; i++){
         let nom = tags[i] + "-checkbox";
@@ -623,6 +664,7 @@ function setInformationsMenu(name_card){
 }   
 
 function resetInformationsMenu(){
+    //Réinitialise toutes les informations sur le menu
     let form = document.getElementById("add-menu-container").firstElementChild;
     form.elements.select_job.value = "enseignants-chercheurs";
     form.elements.name.value = "";
@@ -642,6 +684,7 @@ function resetInformationsMenu(){
 }
 
 function resetCard(card){
+    //Réinitailise une carte
     let nom = card.getElementsByClassName("prenom-nom")[0];
     nom.textContent = "";
     let description = card.getElementsByClassName("infos")[0];
