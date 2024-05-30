@@ -51,15 +51,16 @@ body{
     height: 1px;  
 }
 
-#sous-titre{
+#sous-titre1, #sous-titre2{
     color: #116466;
     font-size: 200%;
     text-align: left;
+    cursor: pointer;
 
 }
 
-#sous-titre:hover{
-    color : white;
+#sous-titre1:hover, #sous-titre2:hover{
+    text-decoration: underline;
     transition: 1s;
 }
 
@@ -109,4 +110,8 @@ img{
 /* =============== FENETRE MODALES ================*/
 
 
+.blur-background {
+    filter: blur(5px);
+    transition: filter 0.2s ease-in-out;
+}
 
