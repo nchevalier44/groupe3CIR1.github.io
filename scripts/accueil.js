@@ -1,30 +1,30 @@
-
-
-
 //Zoom x2 sur l'image des compétences de l'équipe
 
 function zoomCompetences(){
     let competences = document.getElementById("competences");
-    if(competences.style.transform == "" || competences.style.transform == "scale(1, 1) translate(0px, 0px)"){
+    if(competences.style.transform == "" || competences.style.transform == "scale(1, 1) translate(0px, 0px)"){ //Si ce sont les paramètres initiales
         competences.style.transform = "scale(2, 2) translate(-23%, 0)"; //Zoomer x2 et le mettre au milieu de la page pour qu'il soit visible
         competences.style.cursor = "zoom-out";
         let f = document.getElementsByClassName("flou");
         for(let i = 0; i<f.length; i++){
-            f[i].style.filter = "blur(5px)";
+            f[i].style.filter = "blur(5px)"; //Ajouter un filtre flou à tous les autres éléments
         }
-    } else{
+    } else{ //Si l'image est déjà agrandi
         competences.style.transform = "scale(1, 1) translate(0, 0)"; //Réinitialiser au zoom et à la position de départ
         competences.style.cursor = "zoom-in";
         let f = document.getElementsByClassName("flou");
         for(let i = 0; i<f.length; i++){
-            f[i].style.filter = "blur(0)";
+            f[i].style.filter = "blur(0)"; //Enlever le filtre flou
         }
     }
 }
+function initZoom(){
+    let competences = document.getElementById("competences");
+    competences.style.cursor = "zoom-in";
+    competences.addEventListener("click", zoomCompetences);
+}
 
-let competences = document.getElementById("competences");
-competences.style.cursor = "zoom-in";
-competences.addEventListener("click", zoomCompetences);
+initZoom();
 
 
 
@@ -33,6 +33,8 @@ competences.addEventListener("click", zoomCompetences);
 
 function effaceQuiSommesNous(){
     let n = texte.length;
+
+    //Efface toutes les 100 ms une lettre et relance 1s après l'animation
     let inter = setInterval(function() {
         if(n >= 0){
             quiSommesNous.innerText = quiSommesNous.textContent.substring(0, n);
@@ -47,6 +49,7 @@ function effaceQuiSommesNous(){
 
 function animationQuiSommesNous(){
     if(i < texteTab.length){
+        //Ajoute tous les mots
         quiSommesNous.innerText = quiSommesNous.textContent.concat(texteTab[i]);
         i++;
     } else{
@@ -79,16 +82,8 @@ quiSommesNous.className = "flou";
 quiSommesNous.style.transitionDuration = "1.5s";
 quiSommesNous.style.transitionProperty = "transform";
 
+//Définition des variables globales pour ne pas les re-définir dans chaque fonctions
 let texte = "Qui sommes-nous ?";
 let texteTab = ["Qui ", "sommes", "-", "nous ", "?"];
 let i = 0;
-
-//Affiche mot par mot toutes les secondes
-let interval = setInterval(animationQuiSommesNous, 1000);
-
-
-
-
-function logCopy() {
-    console.log("You copied something u nasty !");
-  }
+let interval = setInterval(animationQuiSommesNous, 1000); //Commence l'animation et ajoute un mot toutes les secondes
