@@ -1,7 +1,6 @@
 //Définition d'une variable globale pour pouvoir la modifier et l'utiliser dans les deux fonctions
 let context;
 
-
 function gratter(event){
     //Récupération des coordonnées de la souris sur la page
     let posX = event.offsetX;
@@ -273,6 +272,7 @@ function updateOptionsPeople(){
 }
 
 function createAddMenu(){
+    //Création d'un sous-menu pour remplir les informations
     let container = document.getElementById("menu-container");
     container.style.overflowY = "auto";
     container.style.height = "80%";
@@ -280,13 +280,13 @@ function createAddMenu(){
     add_container.id = "add-menu-container";
     let add_form = document.createElement("form");
     add_form.addEventListener("submit", (event) => {
-        event.preventDefault();
+        event.preventDefault(); //C'est pour éviter de recharger la page
     });
     let hr = document.createElement("hr");
     hr.style.marginTop = "3%";
     hr.style.marginBottom = "3%";
 
-    //JOB
+    //Création des éléments pour selectionner le métier du membre
     let select_job = document.createElement("select");
     select_job.name = "select_job";
     let label_job = document.createElement("label");
@@ -303,7 +303,7 @@ function createAddMenu(){
     add_form.appendChild(label_job);
     add_form.appendChild(select_job);
     
-    //NOM
+    //Création des éléments pour recueillir le nom du membre
     let input_name = document.createElement("input");
     input_name.type = "text";
     input_name.name = "name";
@@ -317,7 +317,7 @@ function createAddMenu(){
     add_form.appendChild(label_name);
     add_form.appendChild(input_name);
 
-    //IMAGE
+    //Création des éléments pour choisir l'image du membre
     let input_image = document.createElement("input");
     input_image.type = "file";
     input_image.name = "image";
@@ -330,7 +330,7 @@ function createAddMenu(){
     add_form.appendChild(label_image);
     add_form.appendChild(input_image);
 
-    //DESCRIPTION
+    //Création des éléments pour recueillir la description du membre
     let textarea_description = document.createElement("textarea");
     textarea_description.name = "description";
     textarea_description.placeholder = "Métier, lieu de travail, email, projet, ...";
@@ -345,7 +345,7 @@ function createAddMenu(){
 
     add_form.appendChild(hr.cloneNode());
 
-    //LIENS
+    //Création des liens pour cocher les liens dont nous avons besoin et les écrire
     let tab_link = ["linkedin", "researchgate", "website", "google-scholar"]
     let label_links = document.createElement("label");
     label_links.textContent = "Liens : ";
@@ -358,6 +358,7 @@ function createAddMenu(){
         label_checkbox.textContent = tab_link[i] + " ";
         label_checkbox.for = input_checkbox.name;
         input_checkbox.addEventListener("change", () => {
+            //On affiche le champ pour écrire le lien quand le nom du site est coché
             if(input_checkbox.checked){
                 input_link.style.display = "inline";
             } else{
@@ -380,7 +381,7 @@ function createAddMenu(){
 
     add_form.appendChild(hr.cloneNode());
 
-    //TAGS
+    //Création des éléments pour cocher chaque tags que l'on souhaite
     let label_tags = document.createElement("label");
     label_tags.textContent = "Tags : ";
     add_form.appendChild(label_tags);
@@ -388,7 +389,7 @@ function createAddMenu(){
     for(let i = 0; i<tab_tags.length; i++){
         let input_checkbox = document.createElement("input");
         input_checkbox.type = "checkbox";
-        input_checkbox.name = tab_tags[i].replaceAll(" ", "-").toLowerCase() + "-checkbox";
+        input_checkbox.name = tab_tags[i].replaceAll(" ", "-").toLowerCase() + "-checkbox"; // "Remote sensing" --> "remote-sensing-checkbox"
         input_checkbox.style.marginRight = "3%";
         input_checkbox.className = "tag-menu";
         let label_checkbox = document.createElement("label");
@@ -399,7 +400,7 @@ function createAddMenu(){
         add_form.appendChild(input_checkbox);
     }
 
-    //SUBMIT
+    //Création des éléments pour le bouton d'ajout/modification
     let input_submit = document.createElement("button");
     input_submit.id = "submit-menu";
     input_submit.type = "submit";
@@ -418,26 +419,27 @@ function createAddMenu(){
 }
 
 function SubmitButton(){
+    //Si on est en mode ajouter, on execute la fonction ajouter sinon on modifie
     if(is_adding){
         addMember();
     } else{
         if(document.getElementsByClassName("card").length == 0){
-            window.alert("Il n'y a aucun membre à modifier ! \nVeuillez sélectionner \"Ajouter\"")
+            //On ne modifie pas de carte s'il y en a aucune
+            window.alert("Il n'y a aucun membre à modifier ! \nVeuillez sélectionner \"Ajouter\"");
         } else{
             let b = checkIfMemberExist();
-            if(b){
-                return;
+            if(!b){
+                let infos = getInformationsFromMenu();
+                let card = infos.get("card"); //On récupère la carte qu'on souhaite modifier
+                resetCard(card); //On supprime toutes les infos pour ensuite editer la carte
+                editMember(card);
             }
-            let infos = getInformationsFromMenu();
-            let card = infos.get("card");
-            resetCard(card);
-            editMember(card);
         }
         
     }
     updateAllDeleteIcon(); //Met à jour la place des icones (certaines peuvent être changé quand on en ajoute)
     updateOptionsPeople(); //Met à jour la liste des membres
-    setInformationsMenu("card-" + document.getElementById("choose-action-form").elements.select_people.value);
+    setInformationsMenu("card-" + document.getElementById("choose-action-form").elements.select_people.value); //On remet à jour le menu
 
     
 }
@@ -445,58 +447,64 @@ function SubmitButton(){
 function editMember(card){
     let infos = getInformationsFromMenu();
 
+    //On change l'id et le nom
     let name = infos.get("name");
     card.getElementsByClassName("prenom-nom")[0].textContent = name;
     name = "card-"+name.replaceAll(" ", "-");
     if(card.id != name){
         card.id = name;
     }
+
+    //On change l'image (si l'utilisateur a donné une image)
     if(infos.get("image-file") != undefined){
         let image = card.getElementsByClassName("photo")[0];
         image.src = URL.createObjectURL(infos.get("image-file"));
-        
     }
     
+    //On change la description
     let description = card.getElementsByClassName("infos")[0];
     description.innerText = infos.get("description");
 
+    //On change les liens
     let links = infos.get("links");
     let div_storage = card_storage.getElementsByClassName("reseaux")[0];
     let tab_li = [];
-    for(let key_value of links){
+    for(let key_value of links){ //links est un dictionnaire contenant le nom du site et le lien, exemple : "linkedin" => "https://www.linkedin.com/in/ayoub-karine-a01ba384"
         let div_li_storage;
         let list_li = div_storage.firstElementChild.children;
         for(let i = 0; i<list_li.length; i++){
             let li = list_li[i];
             let img = li.firstElementChild.firstElementChild;
-            if(img.alt.toLowerCase().replaceAll(" ", "-") == key_value[0]){
+            if(img.alt.toLowerCase().replaceAll(" ", "-") == key_value[0]){ // Si le nom de l'image est la clé, on prend la balise li contenant l'image et le lien 
                 div_li_storage = li;
             }    
         }
         let clone = div_li_storage.cloneNode(true);
-        clone.firstElementChild.href = key_value[1];
-        tab_li.push(clone);
+        clone.firstElementChild.href = key_value[1]; //On change le lien
+        tab_li.push(clone); //On l'ajoute dans un tableau
     }
     let new_reseaux_div = div_storage.cloneNode(true);
-    new_reseaux_div.firstElementChild.replaceChildren(); //Delete all children
+    new_reseaux_div.firstElementChild.replaceChildren(); //On supprime tout ses enfants, soit tous les liens de la carte de base Ayoub Karine
     tab_li.forEach((node) => {
-        new_reseaux_div.firstElementChild.appendChild(node);
+        new_reseaux_div.firstElementChild.appendChild(node); // On ajoute chaque lien dans le div qu'on ajoute ensuite dans la carte
     });
     card.getElementsByClassName("content")[0].appendChild(new_reseaux_div);
 
-    let keywords_div_storage = card_storage.getElementsByClassName("keywords")[0];
-    let list_keywords = keywords_div_storage.firstElementChild;
+    //On change les mots-clés
+    let keywords_div_storage = card_storage.getElementsByClassName("keywords")[0]; //je récupère la structure comme il est possible de n'avoir aucun mot clé (et le reset supprime le div) 
     let tags_name = infos.get("tags");
     let new_keywords_div = keywords_div_storage.cloneNode(true);
     let new_list_keywords = new_keywords_div.firstElementChild;
-    new_list_keywords.replaceChildren();
+    new_list_keywords.replaceChildren(); //On supprime les éléments clonés (les mots-clés de card-storage)
     tags_name.forEach((name) => {
+        //Pour chaque tags, on créé une balise li contenant le mot-clé qu'on ajoute au nouveau div
         let new_li = document.createElement("li");
         new_li.textContent = name;
         new_list_keywords.appendChild(new_li);
     });
     card.getElementsByClassName("content")[0].appendChild(new_keywords_div);
 
+    //On change le métier
     let job = infos.get("job");
     let job_div = document.getElementsByClassName(job)[0].getElementsByClassName("cards")[0];
     job_div.appendChild(card);
@@ -508,10 +516,10 @@ function addMember(){
     if(b){
         return;
     }
-    let card = card_storage.cloneNode(true);
-    document.getElementsByClassName("enseignants-chercheurs")[0].appendChild(card);
-    card.getElementsByClassName("photo")[0].src = "images/image-profil.png";
-    resetCard(card);
+    let card = card_storage.cloneNode(true); //On prend une copie de la carte d'ayoub karine (peu importe si elle a été supprimé puisqu'on la gardé en mémoire)
+    document.getElementsByClassName("enseignants-chercheurs")[0].appendChild(card); //On ajoute la carte au hasard car le editMember s'occupera de changer sa position
+    card.getElementsByClassName("photo")[0].src = "images/image-profil.png"; //On met une image par défaut
+    resetCard(card); //On enlève toutes les infos de la carte pour ensuite la modifier et mettre toutes celles du menu
     editMember(card);
 }
 
@@ -519,7 +527,7 @@ function checkIfMemberExist(){
     //Renvoie true ou false si le membre existe
     let infos = getInformationsFromMenu();
     let cards = document.getElementsByClassName("card");
-    let all_names = [];
+    let all_names = []; //On créé une liste avec les noms des membres existants
     for(let i = 0; i<cards.length; i++){
         let nom = cards[i].id.replaceAll("-", " ").substring(5, cards[i].id.length); // "card-Ayoub-Karine" --> "Ayoub Karine"
         if(is_adding){
@@ -533,7 +541,7 @@ function checkIfMemberExist(){
     }
 
     if(all_names.includes(infos.get("name"))){
-        alert("Le membre existe déjà !");
+        alert("Le membre existe déjà !"); //On en profite pour le dire à l'utilisateur 
         return true;
     }
     return false;
