@@ -39,7 +39,7 @@ function ModalWindow(){
     modalContent2.appendChild(imgModal2);
     modalContent2.appendChild(modalTitle2);
     modalContent2.appendChild(modalText2);
-    modalContent1.appendChild(closeButton2);
+    modalContent2.appendChild(closeButton2);
 
     modalContainer1.appendChild(modalContent1);
     modalContainer2.appendChild(modalContent2);
