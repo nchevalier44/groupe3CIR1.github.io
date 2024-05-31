@@ -1,8 +1,5 @@
 
 
-
-
-
 let Name = document.getElementById('Name');
 Name.setAttribute('required', 'true');
 

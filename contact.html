@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="images/LabISENcarré.png">
         <script src="scripts/contact.js" defer></script>
-        
+        <script src ="scripts/game.js"defer></script>
 
         <!-- Navbar and Footer-->
         <link href="styles/navbarAndFooter.css" rel="stylesheet">
@@ -101,13 +101,7 @@
                 <p>Merci de remplir ce formulaire de manière décente</p>
                 
                 
-                <form action="contact.html#contact-before" method="get">
-                <!-- 
-                La méthode est GET car la méthode POST provoque l'erreur "405 not allowed" sur github
-                Dans action j'ai mis action="contact.html#contact-before" pour faire afficher le div avec l'id "contact-after" 
-                puisque qu'on n'a pas javascript pour le faire.
-                 -->
-
+                <form>
                     <ul>
                         <li><input type="text" id="Name" name="nom" class="txtarea" placeholder="Prénom Nom" oninput="check()"/></li>
                         <li><input type="email" id="email" name="email" placeholder="email@example.com" class="txtarea" oninput="check()"/></li>
