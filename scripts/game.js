@@ -1,5 +1,4 @@
 let is_playing = false;
-let radiusBall = "2vw";
 let speed_ball = 0.4;
 let speed_x = 0;
 let speed_y = 0;
@@ -79,8 +78,8 @@ function createWindow(){
     let ball = document.createElement("div");
     ball.id = "ball";
     gamePlace.appendChild(ball);
-    ball.style.width = radiusBall;
-    ball.style.height = radiusBall;
+    ball.style.width = "2vw";
+    ball.style.height = "2vw";
     ball.style.borderRadius = "50%";
     ball.style.backgroundColor = "whitesmoke";
     ball.style.position = "absolute";
