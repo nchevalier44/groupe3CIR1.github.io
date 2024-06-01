@@ -1,9 +1,11 @@
 let is_playing = false;
 let radiusBall = "2vw";
-let speed_ball = 0.3;
+let speed_ball = 0.4;
 let speed_x = 0;
 let speed_y = 0;
 let moveInterval;
+let botInterval;
+let speed_bot = 1.2;
 
 function initialisation(){
     let form = document.getElementById("form-contact");
@@ -179,6 +181,9 @@ function start(){
         speed_y = -1 * speed_ball;
     }
     moveInterval = setInterval(changePositionBall, 1);
+
+    //On lance le bot
+    botInterval = setInterval(changePositionBot, 1);
 }
 
 function changePositionBall(){
@@ -197,43 +202,41 @@ function collisionBall(new_position_x, new_position_y){
     let ball = document.getElementById("ball");
     let player = document.getElementById("player");
     let bot = document.getElementById("bot");
+    let gamePlace = document.getElementById("gamePlace");
     let ball_rect = ball.getBoundingClientRect();
     let player_rect = player.getBoundingClientRect();
     let bot_rect = bot.getBoundingClientRect();
+    let gamePlace_rect = gamePlace.getBoundingClientRect();
+
+    let offsetright = window.innerWidth - bot.offsetLeft - bot.offsetWidth
 
     //Quand la balle arrive dans la zone du joueur
-    if(new_position_x <= player.offsetLeft + player_rect.width){
-        console.log("zone du joueur");
+    if(new_position_x <= (player.offsetLeft + player_rect.width)){
         //On regarde si le joueur touche la balle
-        if(playerTop() + player_rect.height <= new_position_y + ball_rect.height && new_position_y <= playerTop() + 2*player_rect.height){
-            console.log("collision du joueur");
+        
+        if(player.offsetTop <= (new_position_y + ball_rect.height) && new_position_y <= (player.offsetTop + player_rect.height)){
             speed_x = -speed_x;
             updateSpeedBall();
         } else if(new_position_x <= gamePlaceLeft()){
-            console.log("perdu");
             stopGame(false);
             return;
         }
     }
 
     //Quand la balle arrive dans la zone du bot
-    console.log(new_position_x + " | " + bot.offsetLeft + " | " + bot_rect.width);
-    if(new_position_x + ball_rect.width >= bot.offsetLeft - bot_rect.width){
-        console.log("zone du bot");
+    if((new_position_x + ball_rect.width) >= (bot.offsetLeft)){
         //On regarde si le bot touche la balle
-        if(botTop() + bot_rect.height <= new_position_y + ball_rect.height && new_position_y <= botTop() + 2*bot_rect.height){
-            console.log("collision du bot");
+        if(bot.offsetTop <= (new_position_y + ball_rect.height) && new_position_y <= (bot.offsetTop + bot_rect.height)){
             speed_x = -speed_x;
             updateSpeedBall();
         } else if(new_position_x + ball_rect.width >= gamePlaceRight()){
-            console.log("gagné");
             stopGame(true);
             return;
         }
     }
 
     //On regarde s'il va y avoir une collision avec le haut ou le bas de la zone de jeu
-   if(new_position_y < gamePlaceTop() || new_position_y > gamePlaceBottom() - ball.clientHeight){
+   if(new_position_y < gamePlaceTop() || new_position_y > gamePlaceBottom() - ball_rect.height){
         speed_y = -speed_y;
         updateSpeedBall();
     }
@@ -266,18 +269,18 @@ function gamePlaceRight(){
 function playerTop(){
     //Renvoie position du haut du joueur
     let player = document.getElementById("player");
-    return player.getBoundingClientRect().top - player.parentElement.getBoundingClientRect().top - parseFloat(window.getComputedStyle(player).borderWidth)*2;
+    return player.getBoundingClientRect().top - player.parentElement.getBoundingClientRect().top;
 }
 
 function botTop(){
     //Renvoie position du haut du bot
     let bot = document.getElementById("bot");
-    return bot.getBoundingClientRect().top - bot.parentElement.getBoundingClientRect().top - parseFloat(window.getComputedStyle(bot).borderWidth)*2;
+    return bot.getBoundingClientRect().top - bot.parentElement.getBoundingClientRect().top;
 }
 
 function updateSpeedBall(){
     //On augmente la vitesse de la balle
-    speed_ball += 0.04;
+    speed_ball += 0.05;
     if(speed_x < 0){
         speed_x = -speed_ball;
     } else{
@@ -293,6 +296,7 @@ function updateSpeedBall(){
 
 function stopGame(win){
     clearInterval(moveInterval);
+    clearInterval(botInterval);
     if(win){
         alert("Vous avez gagné !\nVotre message s'enverra dans quelques secondes...");
         document.getElementById("game-container").remove();
@@ -300,13 +304,33 @@ function stopGame(win){
         setTimeout(() => {
             document.getElementById("contact-before").style.display = "none";
             document.getElementById("contact-after").style.display = "block";
-        }, 3000);
+        }, 1000);
     } else{
         alert("Vous avez perdu !\nRetentez une prochaine fois :) ");
         setTimeout(() => {
             window.location = "contact.html";
-        }, 3000);
+        }, 1000);
     }
+}
+
+function changePositionBot(){
+    let ball = document.getElementById("ball");
+    let ball_position_y = parseFloat(window.getComputedStyle(ball).top);
+    let bot = document.getElementById("bot");
+    let bot_position_y = parseFloat(window.getComputedStyle(bot).top);
+    let h = bot.getBoundingClientRect().height;
+
+    let new_pos;
+    if(bot_position_y > ball_position_y){
+        new_pos = bot_position_y - speed_bot;
+    } else{
+        new_pos = bot_position_y + speed_bot;
+    }
+
+    if(new_pos < gamePlaceTop() || new_pos > gamePlaceBottom() - h){
+        return; //On ne bouge pas le bot si sa nouvelle position sort du jeu
+    }
+    bot.style.top = new_pos + "px";
 }
 
 initialisation();
