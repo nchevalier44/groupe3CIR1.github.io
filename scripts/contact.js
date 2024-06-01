@@ -1,4 +1,4 @@
-
+/*
 
 let Name = document.getElementById('Name');
 Name.setAttribute('required', 'true');
@@ -67,4 +67,4 @@ function check(){
     else if(checkName == true && txt.value.length >=20 && Email.validity.valid == true){
         sendButton.style.backgroundColor = "#D9B08C";
     }
-}
+}*/
