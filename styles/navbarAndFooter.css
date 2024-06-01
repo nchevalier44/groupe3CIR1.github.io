@@ -95,7 +95,6 @@ nav {
 #recherche-nav ul {
     display: none;
     position: absolute;
-    right: 62%;
     background-color: #116466;
     border-radius: 1vw;
     height: auto;
@@ -159,7 +158,6 @@ nav {
 #infos-contact-nav ul {
     display: none;
     position: absolute;
-    right: 1.8%;
     background-color: #116466;
     border-radius: 1vw;
     height: auto;
