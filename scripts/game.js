@@ -10,7 +10,7 @@ function initialisation(){
     let form = document.getElementById("form-contact");
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-        if(!is_playing){
+        if(!is_playing){ //On ne peut pas lancer le jeu s'il est déjà en cours
             createGame();
             is_playing = true;
         }
@@ -69,6 +69,7 @@ function createWindow(){
     }, 3900);
     container.appendChild(gamePlace);
 
+    //Quand la souris bouge, on appelle la fonctoin changePositionPlayer qui bouge le joueur en fonction de la souris
     gamePlace.addEventListener("mousemove", (event) => {
         changePositionPlayer(event);
     });
@@ -113,6 +114,7 @@ function createWindow(){
 }
 
 function addBlurBackground(){
+    //Pour chaque enfant de body, on met un filtre flou (on met pas directiement le flou à body car sinon la fenetre qui s'ajoutera à body sera elle aussi flouté)
     let children_body = document.body.children;
     let n = children_body.length;
     for(let i = 1; i<n; i++){
@@ -121,6 +123,7 @@ function addBlurBackground(){
 }
 
 function deleteBlurBackground(){
+    //Pour chaque enfant de body, on enlève le filtre flou
     let children_body = document.body.children;
     let n = children_body.length;
     for(let i = 1; i<n; i++){
@@ -131,8 +134,8 @@ function deleteBlurBackground(){
 function changePositionPlayer(event){
     let player = document.getElementById("player");
     let gamePlace = document.getElementById("gamePlace");
-    let mouse_pos = event.clientY;
-    let h = player.getBoundingClientRect().height;
+    let mouse_pos = event.clientY; //On récupère la position de la souris
+    let h = player.getBoundingClientRect().height; //element.getBoundingClientRect() Renvoie des informations sur l'élément par rapport au viewport de la page
     let newpos = mouse_pos - gamePlace.parentElement.getBoundingClientRect().top - h/2;
     if(newpos < gamePlaceTop() || newpos > gamePlaceBottom() - h){
         return; //On ne bouge pas le joueur si sa nouvelle position sort du jeu
@@ -141,6 +144,7 @@ function changePositionPlayer(event){
 }
 
 function countDown(){
+    //Affiche le compte à rebour
     let number = document.createElement("h3");
     document.getElementById("game-container").appendChild(number);
     number.style.textAlign = "center";
@@ -148,12 +152,12 @@ function countDown(){
     let i = 5;
     let tempInterval = setInterval(() => {
         if(i >= 0){
-            number.innerHTML = i.toString();
+            number.innerHTML = i.toString(); //On affiche le chiffre
             i--;
         } else{
             clearInterval(tempInterval);
             number.remove();
-            start();
+            start(); //On commence le jeu
         }
     }, 1000);
     
@@ -163,19 +167,15 @@ function start(){
     let random_start_direction = Math.random();
     //On lance la balle dans une direction aléatoire
     if(random_start_direction <= 0.25){
-        console.log("Top Right");
         speed_x = speed_ball;
         speed_y = speed_ball;
     } else if(random_start_direction <= 0.50){
-        console.log("Top Left");
         speed_x = -1 * speed_ball;
         speed_y = speed_ball;
     } else if(random_start_direction <= 0.75){
-        console.log("Bottom Right");
         speed_x = speed_ball;
         speed_y = -1 * speed_ball;
     } else{
-        console.log("Bottom Left");
         speed_x = -1 * speed_ball;
         speed_y = -1 * speed_ball;
     }
@@ -187,32 +187,34 @@ function start(){
 
 function changePositionBall(){
     let ball = document.getElementById("ball");
-    let ball_position_x = parseFloat(window.getComputedStyle(ball).left);
-    let ball_position_y = parseFloat(window.getComputedStyle(ball).top);
+
+    let ball_position_x = parseFloat(window.getComputedStyle(ball).left); //window.getComputedStyle(element) renvoie le style de l'élément : si dans le css on met l'unité en %, vw, rem, etc... cela nous renvoie en pixel
+    let ball_position_y = parseFloat(window.getComputedStyle(ball).top); //window.getComputedStyle(element) renvoie le style de l'élément : si dans le css on met l'unité en %, vw, rem, etc... cela nous renvoie en pixel
+    
     let new_position_x = ball_position_x + speed_x;
     let new_position_y = ball_position_y - speed_y;
-    collisionBall(new_position_x, new_position_y);
+
+    collisionBall(new_position_x, new_position_y); //On regarde s'il va y avoir une collision avec la nouvelle position de la balle
+
     ball.style.left = ball_position_x + speed_x + "px";
     ball.style.top = ball_position_y - speed_y + "px"; //on soustrait speed_y car si speed_y > 0 alors on va vers le haut mais on bouge la position à partir de top donc on inverse le signe 
     
 }
 
 function collisionBall(new_position_x, new_position_y){
+    //Dès que la balle touche un mur, sa vitesse augmente
     let ball = document.getElementById("ball");
     let player = document.getElementById("player");
     let bot = document.getElementById("bot");
-    let gamePlace = document.getElementById("gamePlace");
-    let ball_rect = ball.getBoundingClientRect();
-    let player_rect = player.getBoundingClientRect();
-    let bot_rect = bot.getBoundingClientRect();
-    let gamePlace_rect = gamePlace.getBoundingClientRect();
-
-    let offsetright = window.innerWidth - bot.offsetLeft - bot.offsetWidth
+    let ball_rect = ball.getBoundingClientRect(); //element.getBoundingClientRect() Renvoie des informations sur l'élément par rapport au viewport de la page
+    let player_rect = player.getBoundingClientRect(); //element.getBoundingClientRect() Renvoie des informations sur l'élément par rapport au viewport de la page
+    let bot_rect = bot.getBoundingClientRect(); //element.getBoundingClientRect() Renvoie des informations sur l'élément par rapport au viewport de la page
 
     //Quand la balle arrive dans la zone du joueur
     if(new_position_x <= (player.offsetLeft + player_rect.width)){
         //On regarde si le joueur touche la balle
         
+        //offsetTop renvoie la différence entre le top de la carte et le top du parent
         if(player.offsetTop <= (new_position_y + ball_rect.height) && new_position_y <= (player.offsetTop + player_rect.height)){
             speed_x = -speed_x;
             updateSpeedBall();
@@ -225,6 +227,8 @@ function collisionBall(new_position_x, new_position_y){
     //Quand la balle arrive dans la zone du bot
     if((new_position_x + ball_rect.width) >= (bot.offsetLeft)){
         //On regarde si le bot touche la balle
+
+        //offsetTop renvoie la différence entre le top de la carte et le top du parent
         if(bot.offsetTop <= (new_position_y + ball_rect.height) && new_position_y <= (bot.offsetTop + bot_rect.height)){
             speed_x = -speed_x;
             updateSpeedBall();
@@ -314,10 +318,10 @@ function stopGame(win){
 
 function changePositionBot(){
     let ball = document.getElementById("ball");
-    let ball_position_y = parseFloat(window.getComputedStyle(ball).top);
+    let ball_position_y = parseFloat(window.getComputedStyle(ball).top); //window.getComputedStyle(element) renvoie le style de l'élément : si dans le css on met l'unité en %, vw, rem, etc... cela nous renvoie en pixel
     let bot = document.getElementById("bot");
-    let bot_position_y = parseFloat(window.getComputedStyle(bot).top);
-    let h = bot.getBoundingClientRect().height;
+    let bot_position_y = parseFloat(window.getComputedStyle(bot).top); //window.getComputedStyle(element) renvoie le style de l'élément : si dans le css on met l'unité en %, vw, rem, etc... cela nous renvoie en pixel
+    let h = bot.getBoundingClientRect().height; //element.getBoundingClientRect() Renvoie des informations sur l'élément par rapport au viewport de la page
 
     let new_pos;
     if(bot_position_y > ball_position_y){

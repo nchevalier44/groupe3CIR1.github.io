@@ -458,7 +458,7 @@ function editMember(card){
     //On change l'image (si l'utilisateur a donné une image)
     if(infos.get("image-file") != undefined){
         let image = card.getElementsByClassName("photo")[0];
-        image.src = URL.createObjectURL(infos.get("image-file"));
+        image.src = URL.createObjectURL(infos.get("image-file")); //Convertis le fichier en url pour le mettre dans la source de la balise img
     }
     
     //On change la description
