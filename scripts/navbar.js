@@ -56,10 +56,10 @@ function naviguateToMembres(){
         membresNav.addEventListener("click",() =>{
             let confirm = window.confirm("Aller à la page membres ?");
             if(confirm){
-                window.location = 'membres.html';
+                window.location = 'membres.html'; 
             }
             else{
-                window.location ='';            //Si on n'accepte pas la requête du confirm, alors on ne change pas de page
+                window.location =''; //Si on n'accepte pas la requête du confirm, alors on ne change pas de page 
             }
         });
     } catch(error){
