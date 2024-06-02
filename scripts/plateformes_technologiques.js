@@ -9,7 +9,7 @@ function ModalWindow(number){
         let imgModal;         
         let modalTitle;
         let modalText = document.createElement("p");
-        modalText.style.fontSize = "100%";
+        
         
 
         //Si le nombre est 1, cela signifie qu'on doit faire la fenetre modal n°1 sur le living lab
@@ -23,6 +23,11 @@ function ModalWindow(number){
             modalTitle = document.getElementById("sous-titre2").cloneNode(true);
         }
         
+        modalText.style.fontSize = "1vw";
+        modalTitle.style.fontSize = "2vw";
+        imgModal.style.width = "30%";
+        imgModal.style.height = "auto";
+
         //Bouton de fermeture de la modale
         let closeButton = document.createElement("div");
         let imgClose = document.createElement("img");
@@ -39,10 +44,10 @@ function ModalWindow(number){
 
         //CSS de la fenetre modale
         modalContainer.style.position = "fixed";
-        modalContainer.style.top = "10%";
-        modalContainer.style.left = "15%";
-        modalContainer.style.width = "70%";
-        modalContainer.style.height = "80%";
+        modalContainer.style.top = "7.5%";
+        modalContainer.style.left = "7.5%";
+        modalContainer.style.width = "85%";
+        modalContainer.style.height = "85%";
         modalContainer.style.backgroundColor = "#D1E8E2";
         modalContainer.style.borderRadius = "20px";
         modalContainer.style.borderWidth = "3px";
