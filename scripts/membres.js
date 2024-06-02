@@ -132,8 +132,8 @@ function addDeleteIcon(card){
     deleteIcon.style.width = "1.5vw";
     card.firstElementChild.appendChild(deleteIcon);
     //Positionne l'icone en haut à droite de la carte
-    deleteIcon.style.top = card.offsetTop + "px";
-    deleteIcon.style.left = card.offsetLeft + card.clientWidth * 0.94 + "px";
+    deleteIcon.style.top = card.offsetTop + "px"; //offsetTop renvoie la différence entre le top de la carte et le top du parent
+    deleteIcon.style.left = card.offsetLeft + card.clientWidth * 0.94 + "px"; //clientWidth renvoie la longueur de la carte apparaissant sur l'ecran
 
     deleteIcon.addEventListener("click", () => {
         //Quand on clique sur l'icone on demande une confirmation

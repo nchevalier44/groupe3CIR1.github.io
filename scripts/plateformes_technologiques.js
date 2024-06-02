@@ -21,7 +21,7 @@ function ModalWindow(number){
             modalTitle = document.getElementById("sous-titre2").cloneNode(true);
         }
         
-        modalText.style.fontSize = "1vw";
+        modalText.style.fontSize = "1.2vw";
         modalTitle.style.fontSize = "2vw";
         imgModal.style.width = "30%";
         imgModal.style.height = "auto";
