@@ -22,7 +22,7 @@ function ModalWindow(number){
         }
         
         modalText.style.fontSize = "1.2vw";
-        modalTitle.style.fontSize = "2vw";
+        modalTitle.style.fontSize = "2.1vw";
         imgModal.style.width = "30%";
         imgModal.style.height = "auto";
 
