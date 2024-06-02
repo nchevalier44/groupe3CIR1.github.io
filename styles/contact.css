@@ -24,8 +24,6 @@ body{
     overflow-x: hidden;
 }
 
-
-
 #contact-all{
     position: relative;
     height: 62vw;
@@ -38,7 +36,6 @@ body{
     background-color: #FFCB9A;
     border-radius: 100px;
     text-align: center;
-    z-index: 0;
     width: 100%;
     
 }
@@ -98,6 +95,7 @@ form button{
     margin-bottom: 8%;
     border: solid #D9B08C 0.15vw;
     transition: all 0.5s ease-in-out;
+    cursor: pointer;
 
 }
 
@@ -106,19 +104,14 @@ form button:hover{
     color: #D9B08C;
 }
 
-
-#contact-before:target{
-    visibility: hidden;
-}
-
 #contact-after{
+    display: none;
     position: absolute;
     background-color: #FFCB9A;
     border-radius: 100px;
     text-align: center;
     height: 100%;
     width: 100%;
-    z-index: -1;
 }
 
 #contact-after h1{
@@ -130,4 +123,13 @@ form button:hover{
 #contact-after p{
     font-size: 2vw;
     margin-bottom: 5%;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+      100% {
+        opacity: 1;
+    }
 }
