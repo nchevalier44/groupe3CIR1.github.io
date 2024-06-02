@@ -1,4 +1,4 @@
-//CLIC SUR LE LOGO LABISEN
+/////////////CLIC SUR LE LOGO LABISEN////////////////////////
 
 function logoOnClick(){
     let logo = document.getElementById("labisen-nav");
@@ -12,7 +12,7 @@ function logoOnClick(){
 
 logoOnClick();
 
-//HORLOGE NAVBAR
+/////////////////HORLOGE NAVBAR//////////////////////////
 
 //appeler l'heure locale
 
@@ -48,7 +48,7 @@ function clock() {
 setInterval(clock,1000);
 
 
-//Naviguation dans la page membres
+//////////////////Naviguation dans la page membres/////////////////////////
 
 function naviguateToMembres(){
     try{
@@ -71,14 +71,14 @@ function naviguateToMembres(){
 naviguateToMembres();
 
 
-//Génère un message dans la console lorsque l'utilisateur essaye de copier un élement de la page
+//////////////////////Génère un message dans la console lorsque l'utilisateur essaye de copier un élement de la page/////////////////////////
 document.body.setAttribute("oncopy", "logCopy()");
 
 function logCopy() {
     console.log("Be aware when you are copying thing that dont belongs to you !");
 }
 
-//Change le fond d'un boutton de la nav-barre lorsqu'il est pressé
+//////////////////Change le fond d'un boutton de la nav-barre lorsqu'il est pressé/////////////////////////
 
 let itemNav = document.getElementsByClassName("item-nav");
 
@@ -96,7 +96,7 @@ for(let i = 0; i<itemNav.length; i++){
 
 
 
-//Positioner les sous-menus des onglets recherche et infos/contact à la bonne position
+////////////////////Positionner les sous-menus des onglets recherche et infos/contact sous leur onglet respectif//////////////////////
 let menu_infos_contact = document.getElementById("infos-contact-nav");
 let ul_infos_contact = menu_infos_contact.lastElementChild;
 ul_infos_contact.style.left = window.getComputedStyle(menu_infos_contact).left;
