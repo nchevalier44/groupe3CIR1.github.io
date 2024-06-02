@@ -96,7 +96,7 @@ for(let i = 0; i<itemNav.length; i++){
 
 
 
-//Positioner les sous-menus des onglets recherche et infos/contact à la bonne position
+//Positionner les sous-menus des onglets recherche et infos/contact sous leur onglet respectif
 let menu_infos_contact = document.getElementById("infos-contact-nav");
 let ul_infos_contact = menu_infos_contact.lastElementChild;
 ul_infos_contact.style.left = window.getComputedStyle(menu_infos_contact).left;
