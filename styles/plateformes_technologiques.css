@@ -37,7 +37,7 @@ body{
 }
 
 .intro{
-    font-size: 1,5vw;
+    font-size: 1vw;
     margin: auto;
     text-align: justify;
     margin-left: 2%;
@@ -76,22 +76,22 @@ body{
     padding: 20px;
 }
 
-#img_livinglab, #img_environnementHybride{
+/*#img_livinglab, #img_environnementHybride{
     width: 50%;
-}
+}*/
 
 
 .texte-living_lab, .texte-environnement{
     
     text-align: justify;
-    font-size: 1,5vw;
+    font-size: 1vw;
 
 }
 
-#living-lab, #environnement img{
-    height: 50%;
-    width: 100%;
-    max-width: 100%;
+#living-lab img, #environnement img{
+    width: 70%;
+    height: auto;
+    max-width: 80%;
     align-self: auto;
     align-items: center;
 }
