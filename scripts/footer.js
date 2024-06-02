@@ -37,13 +37,11 @@ function ringtone(){                                //Pour ajouter la sonnerie e
 }
     
 
-
-
-
-
 copyPasteAndCall();
 
-//Affichage du temps passé sur la page
+///////////////////////Affichage du temps passé sur la page/////////////////////
+
+
 
 let time = 0;
 function countTime(){ //Calcul du temps
@@ -54,14 +52,16 @@ function countTime(){ //Calcul du temps
 function timeSpent(){ //Affichage du temps 
     let e = document.getElementsByClassName('TimeSpent')[0];
     
-    e.nextElementSibling.remove();
+    e.nextElementSibling.remove(); //On efface le temps actuel sinon les lignes vont s'additionner sans se retirer
     let txt = document.createElement('p');
     txt.style.justifyContent = 'center';
+
+    //On affiche le temps passé sur la page. On distingue les différents cas soit <60s, >60s<3600s, >3600s
     if(time<60){
         txt.innerHTML = "Temps passé sur la page : " + time + " secondes";
     }
     if(time>=60){
-        let minutes = Math.floor(time/60);
+        let minutes = Math.floor(time/60); //La fonction floor permet de récupérer un nombre entier 
         txt.innerHTML =  "Temps passé sur la page : " + minutes + " minutes et " + time%60 + " secondes";
     }
     if(time>=3600){
@@ -70,10 +70,10 @@ function timeSpent(){ //Affichage du temps
         txt.innerHTML =  "Temps passé sur la page : " + heures + " heures et " + minutes + " minutes et " + time%60 + " secondes";
     }
     
-    e.after(txt);
+    e.after(txt); //On ajoute le texte
 }
 
-setInterval(countTime,1000);
-setInterval(timeSpent,1000);
+setInterval(countTime,1000); //Interval pour compter le temps
+setInterval(timeSpent,1000); //Interval pour afficher correctement le temps
 
 

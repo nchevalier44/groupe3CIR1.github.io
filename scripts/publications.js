@@ -35,7 +35,10 @@ function filter(id){
 
     let attribute;
     
-
+    //Les informations des publications sont classée dans un tableau comme ci-dessous :
+    //Nom, titre, année, nom, titre, année, nom, titre, année, etc...
+    //Cela me permet d'avoir une boucle qui va parcourir le tableau à chaque fois que l'utilisateur appuie sur le bouton de recherche
+    //Ainsi le filtre va chercher dans le tableau à chaque fois que l'utilisateur appuie sur le bouton de recherche
     if(id == "search-input1"){  //le classement de mon tableau d'information me permet d'attribuer une valeur en fonction de la zone de texte solicitée
         attribute = 0;
     }
@@ -91,8 +94,9 @@ function filter(id){
 }
 
 
-//CREATION DE L'AJOUT DE PUBLICATIONS
+////////////////////////CREATION DE L'AJOUT DE PUBLICATIONS///////////////////////////////////////
 
+//Bouton d'ajout de publication
 let button = document.createElement("button");
 document.body.appendChild(button);
 button.style.position = "absolute";
@@ -130,6 +134,7 @@ function createMenu(){
     container.style.width = "22.5%";
     document.body.appendChild(container);
 
+    //Création du bouton pour fermer le menu
     let button2 = document.createElement("button");
     container.appendChild(button2);
     button2.style.position = "absolute";
@@ -197,7 +202,7 @@ function createAddMenu(){
     add_form.appendChild(label_pub);
     add_form.appendChild(select_pub);
     
-    //Création des éléments pour recueillir le nom du membre
+    //Création des éléments pour recueillir le nom des participants
     let input_name = document.createElement("input");
     input_name.type = "text";
     input_name.name = "name";
@@ -254,7 +259,7 @@ function createAddMenu(){
 
     add_form.appendChild(hr.cloneNode());
 
-    //Création des éléments pour le bouton d'ajout/modification
+    //Création des éléments pour le bouton d'ajout
     let input_submit = document.createElement("button");
     input_submit.id = "submit-menu";
     input_submit.type = "submit";
@@ -268,7 +273,7 @@ function createAddMenu(){
 }
 
 
-
+//Déclaration des variables pour la nouvelle publication
 let NewPubName;
 let NewPubTitle;
 let NewPubType;
@@ -277,6 +282,7 @@ let NewPubPrecisions;
 
 function SubmitButton(event){
     event.preventDefault();
+    //Récupération des valeurs du formulaire
     NewPubName = document.getElementsByName("name")[0].value;
     NewPubTitle = document.getElementsByName("description")[0].value;
     NewPubType = document.getElementsByName("select_pub")[0].value;
@@ -289,16 +295,6 @@ function SubmitButton(event){
     document.getElementsByName("year")[0].value = "";
     document.getElementsByName("precisions")[0].value = "";
 
-    console.log(NewPubName);
-    console.log(NewPubTitle);
-    console.log(NewPubType);
-    console.log(NewPubYear);
-
-    console.log(typeof(NewPubType));
-    console.log(typeof(NewPubName));
-    console.log(typeof(NewPubTitle));
-    console.log(typeof(NewPubYear));
-
     AddPub();
 }
 
@@ -308,7 +304,7 @@ function AddPub(){
     let contenant = document.createElement("div");
 
 
-    if(NewPubType == "article"){
+    if(NewPubType == "article"){ //On met la publication dans la bonne catégorie avec le carré de la couleur associée
         artSpan.appendChild(contenant);
         contenant.setAttribute("class", "publications");
 
@@ -325,6 +321,10 @@ function AddPub(){
         square_blue.setAttribute("class", "square_blue");
         contenant.appendChild(square_blue);
     }
+
+    //Enfin on peut afficher la nouvelle publication
+    //A noter que l'arborescence (du moins les attributs de classe) de la publication est ici très importante.
+    //Cette arborescence me permet de récuperer les informations correctement pour que l'ajout de publication se révèle compatible avec les filtres
 
     let publications_txt = document.createElement("div");
     contenant.appendChild(publications_txt);
@@ -356,15 +356,3 @@ function AddPub(){
     content_pub.appendChild(year);
 
 }
-
-
-//example
-
-// //<div class="publications">
-// <div class="square_yellow"></div>
-// <div class="publications_txt">
-//     <p class="content_pub">
-//          <span class="blue_txt">
-//              <b>Mélissa Hanafi-Portier , Sarah Samadi , Laure Corbari , Marion Boulard , Elda Miramontes , et al: </span><span class="title">Multiscale spatial patterns and environmental drivers of seamount and island slope megafaunal assemblages along the Mozambique channel.</span> </b> <i>Deep Sea Research Part I: Oceanographic Research Papers, <span class="year" >2023</span></i></p> 
-// </div>
-// </div>

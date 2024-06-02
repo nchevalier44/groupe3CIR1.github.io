@@ -71,17 +71,17 @@ function createLoader(){
     
 }
 
-function loading(){ //hide the whole page during the animation then hide the animation to display the content
+function loading(){ //Cette fonction cache le contenu de la page le temps d'afficher le loading screen
     let childrend = document.body.children;
     let n = childrend.length;
 
-    for(let i = 0; i < n; i++){
+    for(let i = 0; i < n; i++){ //Pour chaque element de la page, on ne l'affiche pas
         childrend[i].style.display  = "none";
     }
 
     createLoader();
 
-    setTimeout(function(){
+    setTimeout(function(){ //On ré-affiche le contenu à l'issu du chargement
         for(let i = 1; i < n+1; i++){
             childrend[i].style.display = "";
         }
