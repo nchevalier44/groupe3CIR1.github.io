@@ -76,9 +76,6 @@ body{
     padding: 20px;
 }
 
-/*#img_livinglab, #img_environnementHybride{
-    width: 50%;
-}*/
 
 
 .texte-living_lab, .texte-environnement{
@@ -89,12 +86,20 @@ body{
 }
 
 #living-lab img, #environnement img{
-    width: 70%;
     height: auto;
     max-width: 80%;
     align-self: auto;
     align-items: center;
 }
+
+#img_livinglab{
+    width: 70%;
+}
+
+#img_environnementHybride{
+    width: 50%;
+}
+
 
 #environnement{
     margin-left: 2%;
