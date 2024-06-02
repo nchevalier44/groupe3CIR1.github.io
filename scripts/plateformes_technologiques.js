@@ -49,30 +49,34 @@ function ModalWindow(){
 
                  //en display none, les fenetres ne s'afficheront pas tant qu'on aura pas cliqué sur les titres
     
+    modalContainer1.style.display = "none";
+    modalContainer2.style.display = "none";
     modalContent1.style.display = "none";
     modalContent2.style.display = "none";
 
     //CSS de la fenetre modale
 
     //modal1
-    modalContainer1.style.position = "absolute";
+    modalContainer1.style.position = "fixed";
     modalContainer1.style.top = "1%";
     modalContainer1.style.left = "25%";
     modalContainer1.style.width = "50%";
-    modalContainer1.style.height = "50";
+   
     modalContainer1.style.backgroundColor = "white";
     modalContainer1.style.borderRadius = "20px";
     modalContainer1.style.borderWidth = "3px";
     modalContainer1.style.borderStyle = "solid";
     modalContainer1.style.borderColor = "#116466";
     modalContainer1.style.transition = "opacity 10s ease-in-out";
+    modalContent1.style.transition = "opacity 10s ease-in-out";
     modalContainer1.style.zIndex = "1000";
 
     modalContent1.style.textAlign = "center";
+    modalContent1.style.padding = "1em";
     
 
     //modal2
-    modalContainer2.style.position = "absolute";
+    modalContainer2.style.position = "fixed";
     modalContainer2.style.top = "1%";
     modalContainer2.style.left = "25%";
     modalContainer2.style.width = "50%";
@@ -86,6 +90,7 @@ function ModalWindow(){
     modalContainer2.style.zIndex = "1000";
 
     modalContent2.style.textAlign = "center";
+    modalContent2.style.padding = "1em";
 
     //closeButton1
 
@@ -115,7 +120,7 @@ function ModalWindow(){
     let title2 = document.getElementById("sous-titre2");
 
     title1.addEventListener("click", () =>{
-        console.log("test");
+        modalContainer1.style.display = "block";
         modalContent1.style.display = "block";    //on passe le display en block pour afficher à l'écran le div modalContainer
         let f = document.getElementsByClassName("flou"); 
         for(let i = 0; i<f.length; i++){
@@ -124,10 +129,11 @@ function ModalWindow(){
     });
 
     title2.addEventListener("click", () =>{
+        modalContainer2.style.display = "block";
         modalContent2.style.display = "block";
         let f = document.getElementsByClassName("flou"); 
         for(let i = 0; i<f.length; i++){
-            f[i].style.filter = "blur(5px)";            //rendre le fond flou (voir class flou dans le html, div qui recouvre toute la page)
+            f[i].style.filter = "blur(10px)";            //rendre le fond flou (voir class flou dans le html, div qui recouvre toute la page)
         }
     });
 
