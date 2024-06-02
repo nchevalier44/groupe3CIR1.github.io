@@ -6,10 +6,11 @@ function ModalWindow(number){
         let modalContainer = document.createElement("div");
         modalContainer.id = "modal-container";
         let modalContent = document.createElement("div");
-        let imgModal; 
+        let imgModal;         
         let modalTitle;
         let modalText = document.createElement("p");
         modalText.style.fontSize = "100%";
+        
 
         //Si le nombre est 1, cela signifie qu'on doit faire la fenetre modal n°1 sur le living lab
         if(number == 1){
