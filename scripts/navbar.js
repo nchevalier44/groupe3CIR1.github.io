@@ -59,7 +59,7 @@ function naviguateToMembres(){
                 window.location = 'membres.html';
             }
             else{
-                window.location ='';
+                window.location ='';            //Si on n'accepte pas la requête du confirm, alors on ne change pas de page
             }
         });
     } catch(error){

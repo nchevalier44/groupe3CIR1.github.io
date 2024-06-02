@@ -18,7 +18,7 @@ function arrowDown(){
     arrow.style.borderRadius = "30%";
     
     //remonter en haut de la page quand on clique sur la flèche
-    let topPage = document.getElementById("membres-nav"); //pour se rendre en haut de la page on prend par exemple un élément de la navbar
+    let topPage = document.getElementById("membres-nav"); //pour se rendre en haut de la page on prend par exemple un élément de la navbar car il se situe en haut de la page, ici on a pris membres-nav 
     arrow.addEventListener("click", () =>{
         topPage.scrollIntoView({ behavior: 'smooth'});  //scrollIntoView permet de scroll automatiquement dans la page vers l'élément topPage
     });
@@ -49,6 +49,8 @@ function switchImage(){
         }
     });
 
+    //même méthode
+    
     img2.addEventListener("click",() =>{
         if(img2.src.endsWith("images/img-projet2.jpg")){
             img2.src = "images/img-projet2-switch.jpg";
