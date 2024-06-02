@@ -1,4 +1,4 @@
-//Zoom x2 sur l'image des compétences de l'équipe
+////////////////Zoom x2 sur l'image des compétences de l'équipe////////////////////////
 
 function zoomCompetences(){
     let competences = document.getElementById("competences");
@@ -29,7 +29,7 @@ initZoom();
 
 
 
-//Animation : Qui sommes-nous ?
+//////////////Animation : "Qui sommes-nous ?"//////////////////////////
 
 function effaceQuiSommesNous(){
     let n = texte.length;
@@ -49,7 +49,7 @@ function effaceQuiSommesNous(){
 
 function animationQuiSommesNous(){
     if(i < texteTab.length){
-        //Ajoute tous les mots
+        //Ajoute un mot du tableau (tableau définis en dessous)
         quiSommesNous.innerText = quiSommesNous.textContent.concat(texteTab[i]);
         i++;
     } else{
@@ -63,7 +63,7 @@ function animationQuiSommesNous(){
             quiSommesNous.style.transform = "translate(0, 0)";
         }, 3000);
         i = 0;
-        setTimeout(effaceQuiSommesNous, 6000);
+        setTimeout(effaceQuiSommesNous, 6000); //Efface le texte pour ensuite refaire l'animation
     }
 }
 
@@ -84,6 +84,6 @@ quiSommesNous.style.transitionProperty = "transform";
 
 //Définition des variables globales pour ne pas les re-définir dans chaque fonctions
 let texte = "Qui sommes-nous ?";
-let texteTab = ["Qui ", "sommes", "-", "nous ", "?"];
-let i = 0;
+let texteTab = ["Qui ", "sommes", "-", "nous ", "?"]; //Tableau de chaque mot
+let i = 0; //Indice du tableau (utilisé dans animationQuiSommesNous())
 let interval = setInterval(animationQuiSommesNous, 1000); //Commence l'animation et ajoute un mot toutes les secondes

@@ -5,7 +5,7 @@
 
 let publications = document.getElementsByClassName("publications_txt");  
 //Je recupère la zone qui m'interresse sous forme de tableau
-//Ce tableau contienr les publication de la pages
+//Ce tableau contient les publication de la pages
 
 let array = getInfo();
 
