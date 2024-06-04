@@ -4,7 +4,7 @@ let speed_x = 0;
 let speed_y = 0;
 let moveInterval;
 let botInterval;
-let speed_bot = 1.2;
+let speed_bot = 2;
 
 function initialisation(){
     let form = document.getElementById("form-contact");
