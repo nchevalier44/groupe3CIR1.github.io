@@ -1,10 +1,10 @@
 let is_playing = false;
-let speed_ball = 2;
+let speed_ball = 0.6;
 let speed_x = 0;
 let speed_y = 0;
 let moveInterval;
 let botInterval;
-let speed_bot = 2;
+let speed_bot = 1.2;
 
 function initialisation(){
     let form = document.getElementById("form-contact");
