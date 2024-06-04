@@ -1,5 +1,5 @@
 let is_playing = false;
-let speed_ball = 0.45;
+let speed_ball = 2;
 let speed_x = 0;
 let speed_y = 0;
 let moveInterval;
